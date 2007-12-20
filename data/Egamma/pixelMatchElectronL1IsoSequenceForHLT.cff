@@ -1,4 +1,4 @@
-# $Id: pixelMatchElectronL1IsoSequenceForHLT.cff,v 1.5 2007/12/17 14:08:08 ghezzi Exp $
+# $Id: pixelMatchElectronL1IsoSequenceForHLT.cff,v 1.1 2007/12/18 11:31:20 pjanot Exp $
 # create a sequence with all required modules and sources needed to make
 # pixel based electrons
 #
@@ -6,36 +6,8 @@
 #
 #
 
-/*
-############ initialize magnetic field #########################
-include "MagneticField/Engine/data/volumeBasedMagneticField.cfi"
-
-############### initialize geometry #####################
-include "Geometry/CMSCommonData/data/cmsIdealGeometryXML.cfi"
-include "Geometry/TrackerGeometryBuilder/data/trackerGeometry.cfi"
-include "Geometry/TrackerNumberingBuilder/data/trackerNumberingGeometry.cfi"
-include "RecoTracker/GeometryESProducer/data/TrackerRecoGeometryESProducer.cfi"
-
-### ESProducers needed for tracking
-include "RecoTracker/TransientTrackingRecHit/data/TransientTrackingRecHitBuilder.cfi"
-include "TrackingTools/KalmanUpdators/data/KFUpdatorESProducer.cfi"
-include "TrackingTools/TrackFitters/data/KFTrajectoryFitterESProducer.cfi"
-include "TrackingTools/TrackFitters/data/KFTrajectorySmootherESProducer.cfi"
-include "TrackingTools/TrackFitters/data/KFFittingSmootherESProducer.cfi" 
-include "TrackingTools/MaterialEffects/data/MaterialPropagator.cfi"
-include "TrackingTools/MaterialEffects/data/OppositeMaterialPropagator.cfi"
-include "RecoLocalTracker/SiPixelRecHits/data/PixelCPEParmError.cfi"
-include "RecoLocalTracker/SiStripRecHitConverter/data/StripCPEfromTrackAngle.cfi"
-include "RecoLocalTracker/SiStripRecHitConverter/data/SiStripRecHitMatcher.cfi"
-include "RecoTracker/CkfPattern/data/CkfTrajectoryBuilderESProducer.cff"
-*/
-
 # modules to make seeds, tracks and electrons
-#include "RecoEgamma/EgammaHLTProducers/data/egammaHLTChi2MeasurementEstimatorESProducer.cff"
-es_module egammaHLTChi2MeasurementEstimatorESProducer =  Chi2MeasurementEstimator from "TrackingTools/KalmanUpdators/data/Chi2MeasurementEstimatorESProducer.cfi"
-replace egammaHLTChi2MeasurementEstimatorESProducer.ComponentName = "egammaHLTChi2"
-replace egammaHLTChi2MeasurementEstimatorESProducer.MaxChi2 = 5.
-replace egammaHLTChi2MeasurementEstimatorESProducer.nSigma = 3.
+include "RecoEgamma/EgammaHLTProducers/data/egammaHLTChi2MeasurementEstimatorESProducer.cff"
 
 #include "RecoEgamma/EgammaElectronProducers/data/electronPixelSeeds.cfi"
 # module l1IsoElectronPixelSeeds = electronPixelSeeds from "RecoEgamma/EgammaElectronProducers/data/electronPixelSeeds.cfi"
@@ -59,7 +31,10 @@ replace l1IsoElectronPixelSeeds.superClusterEndcapProducer = "correctedEndcapSup
 #module ckfL1IsoTrackCandidates = ckfTrackCandidates from "RecoTracker/CkfPattern/data/CkfTrackCandidates.cfi"
 #replace ckfL1IsoTrackCandidates.SeedProducer ="l1IsoElectronPixelSeeds"
 module ckfL1IsoTrackCandidates = trackCandidateProducer from "FastSimulation/Tracking/data/TrackCandidateProducer.cfi"
-replace ckfL1IsoTrackCandidates.SeedProducer ="l1IsoElectronPixelSeeds:"
+replace ckfL1IsoTrackCandidates.SeedProducer = l1IsoElectronPixelSeeds:
+replace ckfL1IsoTrackCandidates.TrackProducer = None:None
+replace ckfL1IsoTrackCandidates.MaxNumberOfCrossedLayers = 999
+replace ckfL1IsoTrackCandidates.SeedCleaning = false
 
 # CTF track fit with material
 module ctfL1IsoWithMaterialTracks = ctfWithMaterialTracks from "RecoTracker/TrackProducer/data/CTFFinalFitWithMaterial.cfi"

@@ -6,17 +6,18 @@
 //
 // Tracker = Pixel and Strip
 //
-include "RecoLocalTracker/Configuration/data/RecoLocalTracker.cff"
+#include "RecoLocalTracker/Configuration/data/RecoLocalTracker.cff"
+include "FastSimulation/HighLevelTrigger/data/common/RecoLocalTracker.cff"
 sequence doLocalPixel   = { pixeltrackerlocalreco }
 sequence doLocalStrip   = { striptrackerlocalreco }
 // combined
 sequence doLocalTracker = { doLocalPixel & doLocalStrip }
 
-
 //
 // Calorimeter = Ecal and Hcal
 //
-include "RecoLocalCalo/Configuration/data/RecoLocalCalo.cff"
+#include "RecoLocalCalo/Configuration/data/RecoLocalCalo.cff"
+include "FastSimulation/HighLevelTrigger/data/common/RecoLocalCalo.cff"
 sequence hcalLocalRecoWithoutHO = {hbhereco & hfreco}
 //
 sequence doLocalEcal          = { ecalLocalRecoSequence }
@@ -26,12 +27,10 @@ sequence doLocalHcalWithoutHO = { hcalLocalRecoWithoutHO }
 sequence doLocalCalo          = { doLocalEcal & doLocalHcal }
 sequence doLocalCaloWithoutHO = {doLocalEcal & doLocalHcalWithoutHO }
 
-
-include "HLTrigger/Configuration/data/common/EcalRegionalRecoFromDigis.cff"
+#include "HLTrigger/Configuration/data/common/EcalRegionalRecoFromDigis.cff"
+include "FastSimulation/HighLevelTrigger/data/common/EcalRegionalReco.cff"
 sequence doRegionalEgammaEcal = { ecalRegionalEgammaRecoSequence }
-/* Muons not yet
 sequence doRegionalMuonsEcal  = { ecalRegionalMuonsRecoSequence }
-*/
 /* taus not yet
 sequence doRegionalTausEcal   = { ecalRegionalTausRecoSequence }
 */

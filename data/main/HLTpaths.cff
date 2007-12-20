@@ -1,10 +1,11 @@
 //
 // JetMET triggers
 #include "HLTrigger/Configuration/data/main/JetMET.cff"
-include "FastSimulation/HighLevelTrigger/data/main/JetMET.cff"
+#include "FastSimulation/HighLevelTrigger/data/main/JetMET.cff"
 
 //
 // Electron Photon triggers
+#include "HLTrigger/Configuration/data/main/Egamma.cff"
 include "FastSimulation/HighLevelTrigger/data/main/Egamma.cff"
 
 //

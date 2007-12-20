@@ -1,0 +1,44 @@
+//
+// When starting from recHits, there are of course no "regional digis" and no "regional rechits".
+// In order not to duplicate too much the modules in the Egamma paths, we define
+// here the modules "ecalRegionalEgammaWeightUncalibRecHit", "ecalRegionalEgammaRecHit" etc..
+// and the sequences ecalRegionalEgammaRecoSequence etc..
+// This way, the subsequent clustering modules always start from the RecHits created
+// by "ecalRegionalEgammaRecHit", both in the "FromDigis", the "FromRaw" and 
+// the "FromRecHits" cases.
+//
+
+
+//
+// From here on simply cloning ecalLocalRecoSequence.cff
+//   with updated InputTags
+//
+
+module  ecalRegionalEgammaRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
+
+module  ecalRegionalMuonsRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
+
+/* taus not yet
+module  ecalRegionalTausRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
+*/
+
+//
+// sequence definition
+//
+sequence ecalRegionalEgammaRecoSequence = { 
+    ecalRegionalEgammaRecHit &
+    ecalPreshowerRecHit
+}
+
+sequence ecalRegionalMuonsRecoSequence = { 
+    ecalRegionalMuonsRecHit &
+    ecalPreshowerRecHit
+}
+/*
+sequence ecalRegionalTausRecoSequence = {
+    ecalRegionalTausRecHit &
+    ecalPreshowerRecHit 
+}
+*/
+
+

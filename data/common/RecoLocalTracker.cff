@@ -1,0 +1,7 @@
+include "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+
+sequence pixeltrackerlocalreco = {dummyModule}
+
+sequence striptrackerlocalreco = {dummyModule}
+
+sequence trackerlocalreco =  {dummyModule}
