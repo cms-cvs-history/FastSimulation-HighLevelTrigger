@@ -6,7 +6,8 @@ include "FastSimulation/HighLevelTrigger/data/common/Vertexing.cff"
 include "RecoTracker/TransientTrackingRecHit/data/TransientTrackingRecHitBuilder.cfi"
 
 #CaloMet stuff
-include "HLTrigger/Configuration/data/common/CaloTowers.cff"
+#include "HLTrigger/Configuration/data/common/CaloTowers.cff"
+include "FastSimulation/HighLevelTrigger/data/common/CaloTowers.cff"
 include "HLTrigger/Configuration/data/common/RecoJetMET.cff"
 
 # Tracker reconstruction
@@ -21,7 +22,8 @@ include "HLTrigger/btau/data/tau/CaloTau.cff"
 include "FastSimulation/HighLevelTrigger/data/btau/SingleTau.cff"
 #include "HLTrigger/btau/data/tau/SingleTauMET.cff"
 include "FastSimulation/HighLevelTrigger/data/btau/SingleTauMET.cff"
-include "HLTrigger/btau/data/tau/DoubleTau.cff"
+#include "HLTrigger/btau/data/tau/DoubleTau.cff"
+include "FastSimulation/HighLevelTrigger/data/btau/DoubleTau.cff"
 include "HLTrigger/btau/data/tau/TauForElectronTau.cff"
 include "HLTrigger/btau/data/tau/TauForMuonTau.cff"
 include "HLTrigger/btau/data/tau/TauTriggerSequences.cff"

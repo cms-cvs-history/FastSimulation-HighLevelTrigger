@@ -7,7 +7,8 @@ include "HLTrigger/btau/data/jetTag/lifetimePrescaler.cff"
 include "HLTrigger/btau/data/jetTag/lifetimeL1Seeds.cff"
 
 # reconstruct calo jets and select those to be used for b tagging
-include "HLTrigger/btau/data/jetTag/lifetimeJetReco.cff"
+#include "HLTrigger/btau/data/jetTag/lifetimeJetReco.cff"
+include "FastSimulation/HighLevelTrigger/data/btau/lifetimeJetReco.cff"
 # reconstruct pixel tracks & primary vertex
 #include "HLTrigger/btau/data/jetTag/pixelReco.cff"
 include "FastSimulation/HighLevelTrigger/data/btau/pixelReco.cff"

@@ -20,6 +20,10 @@ replace l2SingleTauMETJets.L1TauTrigger = "singleTauMETL1SeedFilter"
 #construct the jet-crystals associator for the single and double Tau collection
 module singleTauMETJetCrystalsAssociator = jetCrystalsAssociator from "HLTrigger/btau/data/tau/JetCrystalsAssociator.cfi"
 replace singleTauMETJetCrystalsAssociator.jets   =l2SingleTauMETJets
+#ADD!
+replace singleTauMETJetCrystalsAssociator.EBRecHits =caloRecHits:EcalRecHitsEB 
+replace singleTauMETJetCrystalsAssociator.EERecHits =caloRecHits:EcalRecHitsEE 
+#ADD!
 
 #Produce the EMIsolatedTauTagInfoCollection
 module  ecalSingleTauMETIsol =  ecalIsolation from "HLTrigger/btau/data/tau/EcalIsolation.cfi"
