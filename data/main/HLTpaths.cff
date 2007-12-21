@@ -6,7 +6,7 @@
 //
 // Electron Photon triggers
 #include "HLTrigger/Configuration/data/main/Egamma.cff"
-include "FastSimulation/HighLevelTrigger/data/main/Egamma.cff"
+#include "FastSimulation/HighLevelTrigger/data/main/Egamma.cff"
 
 //
 // Muon triggers
@@ -15,6 +15,7 @@ include "FastSimulation/HighLevelTrigger/data/main/Egamma.cff"
 //
 // B and Tau triggers
 #include "HLTrigger/Configuration/data/main/BTau.cff"
+include "FastSimulation/HighLevelTrigger/data/main/BTau.cff"
 
 //
 // Cross triggers
