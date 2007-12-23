@@ -1,0 +1,69 @@
+#CaloMet stuff
+include "FastSimulation/HighLevelTrigger/data/common/CaloTowers.cff"
+
+# Construct the jet-crystals associator for the single 
+# and double Tau collection
+module doubleTauJetCrystalsAssociator = jetCrystalsAssociator from "HLTrigger/btau/data/tau/JetCrystalsAssociator.cfi"
+replace doubleTauJetCrystalsAssociator.jets   =l2DoubleTauJets
+replace doubleTauJetCrystalsAssociator.EBRecHits =caloRecHits:EcalRecHitsEB
+replace doubleTauJetCrystalsAssociator.EERecHits =caloRecHits:EcalRecHitsEE
+
+module singleTauJetCrystalsAssociator = jetCrystalsAssociator from "HLTrigger/btau/data/tau/JetCrystalsAssociator.cfi"
+replace singleTauJetCrystalsAssociator.jets   =l2SingleTauJets
+replace singleTauJetCrystalsAssociator.EBRecHits =caloRecHits:EcalRecHitsEB
+replace singleTauJetCrystalsAssociator.EERecHits =caloRecHits:EcalRecHitsEE
+
+module singleTauMETJetCrystalsAssociator = jetCrystalsAssociator from "HLTrigger/btau/data/tau/JetCrystalsAssociator.cfi"
+replace singleTauMETJetCrystalsAssociator.jets   =l2SingleTauMETJets
+replace singleTauMETJetCrystalsAssociator.EBRecHits =caloRecHits:EcalRecHitsEB
+replace singleTauMETJetCrystalsAssociator.EERecHits =caloRecHits:EcalRecHitsEE
+
+#Primary Vertex
+include "FastSimulation/Tracking/data/PixelVerticesProducer.cff"
+
+# (Not-so) Regional Tracking
+include "FastSimulation/Tracking/data/GlobalPixelTracking.cff"
+# L2.5 pixel-seeded tracks for SingleTau(MET) collections (pT>5GeV/c)
+module ctfWithMaterialTracksL25SingleTau = FastTrackMerger {
+    VInputTag TrackProducers = {
+        globalPixelGSWithMaterialTracks
+    }
+    untracked bool SaveTracksOnly = true
+    untracked double ptMin = 5.0
+}
+
+module ctfWithMaterialTracksL25SingleTauMET = FastTrackMerger {
+    VInputTag TrackProducers = {
+        globalPixelGSWithMaterialTracks
+    }
+    untracked bool SaveTracksOnly = true
+    untracked double ptMin = 5.0
+}
+
+# L3 pixel-seeded tracks for Single Tau Collection (pT>1GeV/c)
+module ctfWithMaterialTracksL3SingleTau = FastTrackMerger {
+    VInputTag TrackProducers = {
+        globalPixelGSWithMaterialTracks
+    }
+    untracked bool SaveTracksOnly = true
+    untracked double ptMin = 1.0
+}
+
+module ctfWithMaterialTracksL3SingleTauMET = FastTrackMerger {
+    VInputTag TrackProducers = {
+        globalPixelGSWithMaterialTracks
+    }
+    untracked bool SaveTracksOnly = true
+    untracked double ptMin = 1.0
+}
+
+#L25Trk reconstruction
+sequence ckfTracksL25SingleTau = {globalPixelGSTracking, ctfWithMaterialTracksL25SingleTau}
+
+sequence ckfTracksL25SingleTauMET = { globalPixelGSTracking & ctfWithMaterialTracksL25SingleTauMET }
+
+#L3Trk reconstruction
+sequence ckfTracksL3SingleTau = {globalPixelGSTracking, ctfWithMaterialTracksL3SingleTau}
+
+sequence ckfTracksL3SingleTauMET = { globalPixelGSTracking & ctfWithMaterialTracksL3SingleTauMET }
+
