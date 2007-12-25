@@ -1,5 +1,5 @@
 #include "HLTrigger/Egamma/data/CommonEgammaHLTReco.cff"
-include "FastSimulation/HighLevelTrigger/data/Egamma/CommonEgammaHLTReco.cff"
+#include "FastSimulation/HighLevelTrigger/data/Egamma/CommonEgammaHLTReco.cff"
 
 # common include file for different luminosities
 #

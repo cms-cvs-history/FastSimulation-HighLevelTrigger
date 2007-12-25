@@ -1,0 +1,19 @@
+# Seeding for electrons (small windows)
+include "FastSimulation/EgammaElectronAlgos/data/pixelMatchElectronL1IsoSequenceForHLT.cff"
+include "FastSimulation/EgammaElectronAlgos/data/pixelMatchElectronL1NonIsoSequenceForHLT.cff"
+
+# Seeding for electrons (large windows)
+include "FastSimulation/EgammaElectronAlgos/data/pixelMatchElectronL1IsoLargeWindowSequenceForHLT.cff"
+include "FastSimulation/EgammaElectronAlgos/data/pixelMatchElectronL1NonIsoLargeWindowSequenceForHLT.cff"
+
+# Tracking for electrons (small windows)
+include "FastSimulation/EgammaElectronAlgos/data/l1IsoElectronsRegionalRecoTracker.cff"	
+include "FastSimulation/EgammaElectronAlgos/data/l1NonIsoElectronsRegionalRecoTracker.cff"	
+
+# Tracking for electrons (large windows)
+include "FastSimulation/EgammaElectronAlgos/data/l1IsoLargeWindowElectronsRegionalRecoTracker.cff"	
+include "FastSimulation/EgammaElectronAlgos/data/l1NonIsoLargeWindowElectronsRegionalRecoTracker.cff"
+
+# Tracking for photons
+include "FastSimulation/EgammaElectronAlgos/data/l1IsoEgammaRegionalRecoTracker.cff"
+include "FastSimulation/EgammaElectronAlgos/data/l1NonIsoEgammaRegionalRecoTracker.cff"
