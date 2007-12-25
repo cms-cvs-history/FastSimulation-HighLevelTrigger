@@ -2,6 +2,8 @@
 
 
 #include "HLTrigger/Egamma/data/EgammaHLTLocal.cff"
+include "FastSimulation/HighLevelTrigger/data/Egamma/CommonEgammaHLTReco.cff"
+include "FastSimulation/HighLevelTrigger/data/Egamma/HLTFastRecoForEgamma.cff"
 include "FastSimulation/HighLevelTrigger/data/Egamma/EgammaHLTLocal.cff"
 
 include "HLTrigger/Egamma/data/SingleElectronL1Isolated.cff"
@@ -50,8 +52,6 @@ path CandHLT2PhotonExclusive = { doubleExclPhotonL1Isolated }
 include "HLTrigger/Egamma/data/SinglePhotonL1IsolatedPrescaledEt12_1e32.cff"
 path CandHLT1PhotonL1Isolated = { singlePhotonPrescaledL1Isolated }
 
-
-/*
 include "HLTrigger/Egamma/data/SingleElectronL1IsolatedLargeWindow_1e32.cff"
 path CandHLT1ElectronStartup        =    {singleElectronL1IsolatedLargeWindow}
 
@@ -63,4 +63,3 @@ path CandHLT2ElectronStartup        =    {doubleElectronL1IsolatedLargeWindow}
 
 include "HLTrigger/Egamma/data/DoubleElectronL1NonIsolatedLargeWindow_1e32.cff"
 path CandHLT2ElectronRelaxedStartup = {doubleElectronL1NonIsolatedLargeWindow}
-*/
