@@ -1,0 +1,23 @@
+### RecoMuon flux ##########################################################
+## Common HLT stuff
+include "FastSimulation/HighLevelTrigger/data/common/CaloTowers.cff"
+##
+
+## L2 seeds from L1 input
+module hltL2MuonSeeds = L2MuonSeeds from "RecoMuon/L2MuonSeedGenerator/data/L2MuonSeeds.cfi"
+replace hltL2MuonSeeds.GMTReadoutCollection = l1ParamMuons
+replace hltL2MuonSeeds.InputObjects = l1ParamMuons
+
+## L3 regional reconstruction
+include "FastSimulation/Tracking/data/GlobalPixelTracking.cff"
+include "FastSimulation/Muons/data/L3Muons.cff"
+module hltL3Muons = L3Muons from "FastSimulation/Muons/data/L3Muons.cfi"
+replace hltL3Muons.MuonCollectionLabel = hltL2Muons:UpdatedAtVtx
+replace hltL3Muons.L3TrajBuilderParameters.TkTrajectoryAvailable = true
+replace hltL3Muons.L3TrajBuilderParameters.TrackerTrajectories = globalPixelGSWithMaterialTracks
+
+## Pixel tracking for muon isolation
+include "FastSimulation/HighLevelTrigger/data/common/Vertexing.cff"
+
+sequence l3muonrecoNocand = { (doLocalPixel & doLocalStrip), globalPixelGSTracking, hltL3Muons }
+sequence l3muonisoreco = { pixelGSTracking, hltL3MuonIsolations }
