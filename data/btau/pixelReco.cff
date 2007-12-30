@@ -1,13 +1,5 @@
 # Reconstruct pixel tracks and vertices from Digis
  
 # Pixel primary vertices and tracks (used at L2.5 and L3)
-#include "RecoPixelVertexing/Configuration/data/RecoPixelVertexing.cff"
 include "FastSimulation/Tracking/data/PixelVerticesProducer.cff"
-
-# Include the following lines to switched from pixel-triplets to
-# mixed pixel+strip triplets. These perform worse, but are robust
-# against dead pixels.
-#include "RecoTracker/TkSeedingLayers/data/MixedLayerTriplets.cfi"
-#replace pixelTracks.OrderedHitsFactoryPSet.SeedingLayers="MixedLayerTriplets" 
-#sequence bL25trackReco = { doLocalPixel & recopixelvertexing }
 sequence bL25trackReco = { recopixelvertexing }

@@ -3,7 +3,7 @@
 
 #include "HLTrigger/Egamma/data/EgammaHLTLocal.cff"
 include "FastSimulation/HighLevelTrigger/data/Egamma/CommonEgammaHLTReco.cff"
-include "FastSimulation/HighLevelTrigger/data/Egamma/HLTFastRecoForEgamma.cff"
+//include "FastSimulation/HighLevelTrigger/data/Egamma/HLTFastRecoForEgamma.cff"
 include "FastSimulation/HighLevelTrigger/data/Egamma/EgammaHLTLocal.cff"
 
 include "HLTrigger/Egamma/data/SingleElectronL1Isolated.cff"

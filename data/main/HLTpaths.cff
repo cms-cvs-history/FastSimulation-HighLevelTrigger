@@ -1,13 +1,13 @@
 //
 // JetMET triggers
 #include "HLTrigger/Configuration/data/main/JetMET.cff"
-#include "FastSimulation/HighLevelTrigger/data/main/JetMET.cff"
+include "FastSimulation/HighLevelTrigger/data/main/JetMET.cff"
 
 //
 // Electron Photon triggers
-#include "FastSimulation/HighLevelTrigger/data/Muon/HLTFastRecoForEgamma.cff"
+include "FastSimulation/HighLevelTrigger/data/Egamma/HLTFastRecoForEgamma.cff"
 #include "HLTrigger/Configuration/data/main/Egamma.cff"
-#include "FastSimulation/HighLevelTrigger/data/main/Egamma.cff"
+include "FastSimulation/HighLevelTrigger/data/main/Egamma.cff"
 
 //
 // Muon triggers
@@ -17,9 +17,10 @@ include "HLTrigger/Configuration/data/main/Muon.cff"
 
 //
 // B and Tau triggers
-#include "FastSimulation/HighLevelTrigger/data/Muon/HLTFastRecoForTau.cff"
+include "FastSimulation/HighLevelTrigger/data/btau/HLTFastRecoForTau.cff"
+include "FastSimulation/HighLevelTrigger/data/btau/HLTFastRecoForB.cff"
 #include "HLTrigger/Configuration/data/main/BTau.cff"
-#include "FastSimulation/HighLevelTrigger/data/main/BTau.cff"
+include "FastSimulation/HighLevelTrigger/data/main/BTau.cff"
 
 //
 // Cross triggers

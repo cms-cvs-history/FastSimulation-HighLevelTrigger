@@ -1,0 +1,12 @@
+# Calo Towers
+include "FastSimulation/HighLevelTrigger/data/common/CaloTowers.cff"
+
+# Reconstruct pixel tracks and vertices
+include "FastSimulation/HighLevelTrigger/data/btau/pixelReco.cff"
+
+# Reconstruct tracks with pixel seeds
+include "FastSimulation/HighLevelTrigger/data/btau/lifetimeRegionalTracking.cff"
+
+# Reconstruct muons for JPsiToMumu
+include "FastSimulation/HighLevelTrigger/data/btau/L3ForDisplacedMumuTrigger.cff"
+#include "FastSimulation/HighLevelTrigger/data/btau/L3ForDisplacedMumuLooseTrigger.cff"

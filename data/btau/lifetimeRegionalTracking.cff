@@ -1,3 +1,5 @@
+include "FastSimulation/Tracking/data/GlobalPixelTracking.cff"
+
 # Take all pixel tracks for b tagging track reco (pTMin>1GeV, nHits>=8) 
 module bJetRegionalCtfWithMaterialTracks = FastTrackMerger {
 

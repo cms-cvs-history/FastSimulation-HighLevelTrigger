@@ -19,5 +19,11 @@ replace hltL3Muons.L3TrajBuilderParameters.TrackerTrajectories = globalPixelGSWi
 ## Pixel tracking for muon isolation
 include "FastSimulation/HighLevelTrigger/data/common/Vertexing.cff"
 
-sequence l3muonrecoNocand = { (doLocalPixel & doLocalStrip), globalPixelGSTracking, hltL3Muons }
-sequence l3muonisoreco = { pixelGSTracking, hltL3MuonIsolations }
+sequence l3muonrecoNocand = { 
+    globalPixelGSTracking,  // Pixel-pair-seeded tracks
+    hltL3Muons }
+
+sequence l3muonisoreco = { 
+    pixelGSTracking,       // Pixel-triplet tracks
+    hltL3MuonIsolations 
+}

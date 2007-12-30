@@ -16,10 +16,10 @@ path HLTB4Jet = {b4jetTrig}
 path HLTBHT   = {  bHTTrig}
 
 
-/*
 //
 // muon-based b-tag
-include "HLTrigger/btau/data/jetTag/softmuonHLT.cff"
+#include "HLTrigger/btau/data/jetTag/softmuonHLT.cff"
+include "FastSimulation/HighLevelTrigger/data/btau/softmuonHLT.cff"
 path HLTB1JetMu = {bmu1jetTrig}
 path HLTB2JetMu = {bmu2jetTrig}
 path HLTB3JetMu = {bmu3jetTrig}
@@ -28,10 +28,12 @@ path HLTBHTMu   = {  bmuHTTrig}
 
 //
 // special B -> J/Psi -> dimuon trigger
-// include "HLTrigger/btau/data/displacedmumu/PathBToJpsiToMumu.cff"
-include "HLTrigger/btau/data/displacedmumu/PathBToJpsiToMumuLoose.cff"
+// #include "HLTrigger/btau/data/displacedmumu/PathBToJpsiToMumu.cff"
+// include "FastSimulation/HighLevelTrigger/data/btau/PathBToJpsiToMumu.cff"
+#include "HLTrigger/btau/data/displacedmumu/PathBToJpsiToMumuLoose.cff"
+include "FastSimulation/HighLevelTrigger/data/btau/PathBToJpsiToMumuLoose.cff"
 path HLTBJPsiMuMu = {btoJpsitoMumu}	
-*/
+
 
 //
 // Tau trigger paths
