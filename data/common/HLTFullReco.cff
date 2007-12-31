@@ -1,0 +1,7 @@
+#Specific reconstruction sequences for FullSimulation & data.
+include "HLTrigger/JetMET/data/HLTFastRecoForJetMET.cff"
+include "HLTrigger/Egamma/data/HLTFastRecoForEgamma.cff"
+include "HLTrigger/Muon/data/HLTFastRecoForMuon.cff"
+include "HLTrigger/btau/data/HLTFastRecoForB.cff"
+include "HLTrigger/btau/data/tau/HLTFastRecoForTau.cff"
+include "HLTrigger/special/data/HLTFastRecoForSpecial.cff"

@@ -16,14 +16,14 @@ replace hltL3Muons.MuonCollectionLabel = hltL2Muons:UpdatedAtVtx
 replace hltL3Muons.L3TrajBuilderParameters.TkTrajectoryAvailable = true
 replace hltL3Muons.L3TrajBuilderParameters.TrackerTrajectories = globalPixelGSWithMaterialTracks
 
+sequence hltL3MuonTracks = { 
+    globalPixelGSTracking,  // Pixel-pair-seeded tracks
+    hltL3Muons 
+}
+
 ## Pixel tracking for muon isolation
 include "FastSimulation/HighLevelTrigger/data/common/Vertexing.cff"
 
-sequence l3muonrecoNocand = { 
-    globalPixelGSTracking,  // Pixel-pair-seeded tracks
-    hltL3Muons }
-
-sequence l3muonisoreco = { 
-    pixelGSTracking,       // Pixel-triplet tracks
-    hltL3MuonIsolations 
+sequence pixelTracksForMuons = { 
+    pixelGSTracking       // Pixel-triplet tracks
 }

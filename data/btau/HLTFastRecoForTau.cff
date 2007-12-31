@@ -18,6 +18,19 @@ replace singleTauMETJetCrystalsAssociator.jets   =l2SingleTauMETJets
 replace singleTauMETJetCrystalsAssociator.EBRecHits =caloRecHits:EcalRecHitsEB
 replace singleTauMETJetCrystalsAssociator.EERecHits =caloRecHits:EcalRecHitsEE
 
+# Same for electron-tau collection
+# Construct the jet-crystals associator for the lepton-tau collection
+module hltJetCrystalsAssociatorElectronTau = jetCrystalsAssociator from "HLTrigger/btau/data/tau/JetCrystalsAssociator.cfi"
+replace hltJetCrystalsAssociatorElectronTau.jets = hltL2TauJetsProviderElectronTau
+replace hltJetCrystalsAssociatorElectronTau.EBRecHits =caloRecHits:EcalRecHitsEB
+replace hltJetCrystalsAssociatorElectronTau.EERecHits =caloRecHits:EcalRecHitsEE
+
+# Construct the jet-crystals associator for the lepton-tau collection
+module hltJetCrystalsAssociatorMuonTau = jetCrystalsAssociator from "HLTrigger/btau/data/tau/JetCrystalsAssociator.cfi"
+replace hltJetCrystalsAssociatorMuonTau.jets = hltL2TauJetsProviderMuonTau
+replace hltJetCrystalsAssociatorMuonTau.EBRecHits =caloRecHits:EcalRecHitsEB
+replace hltJetCrystalsAssociatorMuonTau.EERecHits =caloRecHits:EcalRecHitsEE
+
 #Primary Vertex
 include "FastSimulation/Tracking/data/PixelVerticesProducer.cff"
 
@@ -33,6 +46,14 @@ module ctfWithMaterialTracksL25SingleTau = FastTrackMerger {
 }
 
 module ctfWithMaterialTracksL25SingleTauMET = FastTrackMerger {
+    VInputTag TrackProducers = {
+        globalPixelGSWithMaterialTracks
+    }
+    untracked bool SaveTracksOnly = true
+    untracked double ptMin = 5.0
+}
+
+module hltCtfWithMaterialTracksL25ElectronTau = FastTrackMerger {
     VInputTag TrackProducers = {
         globalPixelGSWithMaterialTracks
     }
@@ -57,13 +78,24 @@ module ctfWithMaterialTracksL3SingleTauMET = FastTrackMerger {
     untracked double ptMin = 1.0
 }
 
+module hltCtfWithMaterialTracksL3ElectronTau = FastTrackMerger {
+    VInputTag TrackProducers = {
+        globalPixelGSWithMaterialTracks
+    }
+    untracked bool SaveTracksOnly = true
+    untracked double ptMin = 1.0
+}
+
 #L25Trk reconstruction
-sequence ckfTracksL25SingleTau = {globalPixelGSTracking, ctfWithMaterialTracksL25SingleTau}
+sequence ckfTracksL25SingleTau = {globalPixelGSTracking & ctfWithMaterialTracksL25SingleTau}
 
 sequence ckfTracksL25SingleTauMET = { globalPixelGSTracking & ctfWithMaterialTracksL25SingleTauMET }
+
+sequence hltTracksL25ElectronTau = { globalPixelGSTracking, hltCtfWithMaterialTracksL25ElectronTau }
 
 #L3Trk reconstruction
 sequence ckfTracksL3SingleTau = {globalPixelGSTracking, ctfWithMaterialTracksL3SingleTau}
 
 sequence ckfTracksL3SingleTauMET = { globalPixelGSTracking & ctfWithMaterialTracksL3SingleTauMET }
 
+sequence hltTracksL3ElectronTau = { globalPixelGSTracking & hltCtfWithMaterialTracksL3ElectronTau }

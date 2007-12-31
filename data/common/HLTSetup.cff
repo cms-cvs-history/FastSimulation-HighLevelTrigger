@@ -44,3 +44,7 @@ sequence doLocalDT      = { muonDTDigis, dtlocalreco }
 sequence doLocalRPC     = { muonRPCDigis, rpcRecHits }
 // combined
 sequence doLocalMuon    = { doLocalDT & doLocalCSC & doLocalRPC}
+
+/// Specific reocnstruction sequences for FastSimulation
+include "FastSimulation/HighLevelTrigger/data/common/HLTFastReco.cff"
+

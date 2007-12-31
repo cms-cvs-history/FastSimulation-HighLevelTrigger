@@ -1,0 +1,2 @@
+# Create CaloTowers for JetMET
+include "FastSimulation/HighLevelTrigger/data/common/CaloTowers.cff"

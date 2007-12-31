@@ -1,0 +1,7 @@
+#Specific reconstruction sequences for FastSimulation.
+include "FastSimulation/HighLevelTrigger/data/JetMET/HLTFastRecoForJetMET.cff"
+include "FastSimulation/HighLevelTrigger/data/Egamma/HLTFastRecoForEgamma.cff"
+include "FastSimulation/HighLevelTrigger/data/Muon/HLTFastRecoForMuon.cff"
+include "FastSimulation/HighLevelTrigger/data/btau/HLTFastRecoForTau.cff"
+include "FastSimulation/HighLevelTrigger/data/btau/HLTFastRecoForB.cff"
+include "FastSimulation/HighLevelTrigger/data/special/HLTFastRecoForSpecial.cff"
