@@ -31,10 +31,9 @@ sequence doLocalCaloWithoutHO = {doLocalEcal & doLocalHcalWithoutHO }
 include "FastSimulation/HighLevelTrigger/data/common/EcalRegionalReco.cff"
 sequence doRegionalEgammaEcal = { ecalRegionalEgammaRecoSequence }
 sequence doRegionalMuonsEcal  = { ecalRegionalMuonsRecoSequence }
-/* taus not yet
 sequence doRegionalTausEcal   = { ecalRegionalTausRecoSequence }
-*/
-
+sequence doRegionalJetsEcal = {  ecalRegionalJetsRecoSequence }
+sequence doEcalAll = { ecalAllRecoSequence }
 //
 // Muon = CSC and DT and RPC
 //

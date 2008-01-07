@@ -1,2 +1,2 @@
-# Create CaloTowers for JetMET
-include "FastSimulation/HighLevelTrigger/data/common/CaloTowers.cff"
+# Create CaloTowers for JetMET (does not need anything special)
+#include "HLTrigger/Configuration/data/common/CaloTowers.cff"

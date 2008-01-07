@@ -1,8 +1,4 @@
 ### RecoMuon flux ##########################################################
-## Common HLT stuff
-include "HLTrigger/Configuration/data/common/CaloTowers.cff"
-##
-
 ## L2 seeds from L1 input
 module hltL2MuonSeeds = L2MuonSeeds from "RecoMuon/L2MuonSeedGenerator/data/L2MuonSeeds.cfi"
 

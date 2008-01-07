@@ -1,6 +1,3 @@
-#CaloMet stuff
-include "FastSimulation/HighLevelTrigger/data/common/CaloTowers.cff"
-
 # Construct the jet-crystals associator for the single 
 # and double Tau collection
 module doubleTauJetCrystalsAssociator = jetCrystalsAssociator from "HLTrigger/btau/data/tau/JetCrystalsAssociator.cfi"

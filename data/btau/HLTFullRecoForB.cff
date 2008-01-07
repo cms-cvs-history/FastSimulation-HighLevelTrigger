@@ -1,6 +1,3 @@
-# Calo Towers
-include "HLTrigger/Configuration/data/common/CaloTowers.cff"
-
 # Reconstruct pixel tracks and vertices from Digis
 include "HLTrigger/btau/data/jetTag/pixelReco.cff"
 

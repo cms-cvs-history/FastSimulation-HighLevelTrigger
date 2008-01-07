@@ -1,6 +1,3 @@
-# Calo Towers
-include "FastSimulation/HighLevelTrigger/data/common/CaloTowers.cff"
-
 # Reconstruct pixel tracks and vertices
 include "FastSimulation/HighLevelTrigger/data/btau/pixelReco.cff"
 

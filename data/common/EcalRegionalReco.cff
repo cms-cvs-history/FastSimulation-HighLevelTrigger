@@ -18,9 +18,11 @@ module  ecalRegionalEgammaRecHit = caloRecHitCopy from "FastSimulation/CaloRecHi
 
 module  ecalRegionalMuonsRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
 
-/* taus not yet
 module  ecalRegionalTausRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
-*/
+
+module  ecalRegionalJetsRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
+
+module  ecalRecHitAll = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
 
 //
 // sequence definition
@@ -34,11 +36,19 @@ sequence ecalRegionalMuonsRecoSequence = {
     ecalRegionalMuonsRecHit &
     ecalPreshowerRecHit
 }
-/*
+
 sequence ecalRegionalTausRecoSequence = {
     ecalRegionalTausRecHit &
     ecalPreshowerRecHit 
 }
-*/
 
+sequence ecalRegionalJetsRecoSequence = {
+    ecalRegionalJetsRecHit &
+    ecalPreshowerRecHit 
+}
+
+sequence ecalAllRecoSequence = {
+    ecalRecHitAll &
+    ecalPreshowerRecHit 
+}
 
