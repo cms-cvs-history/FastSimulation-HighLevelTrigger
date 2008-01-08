@@ -1,2 +1,4 @@
 # Create CaloTowers for JetMET (does not need anything special)
 #include "HLTrigger/Configuration/data/common/CaloTowers.cff"
+# Temporary workaround for a bug in HLT configuration
+#sequence towerMaker = { towerMakerForAll }

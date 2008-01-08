@@ -5,3 +5,106 @@ include "FastSimulation/HighLevelTrigger/data/Muon/HLTFastRecoForMuon.cff"
 include "FastSimulation/HighLevelTrigger/data/btau/HLTFastRecoForTau.cff"
 include "FastSimulation/HighLevelTrigger/data/btau/HLTFastRecoForB.cff"
 include "FastSimulation/HighLevelTrigger/data/special/HLTFastRecoForSpecial.cff"
+
+# An additional towerMaker !
+include "RecoJets/JetProducers/data/CaloTowerSchemeB.cfi"
+replace towerMaker.ecalInputs = { 
+    "caloRecHits:EcalRecHitsEB", 
+    "caloRecHits:EcalRecHitsEE" 
+}
+replace towerMaker.hbheInput = caloRecHits
+replace towerMaker.hfInput = caloRecHits
+replace towerMaker.hoInput = caloRecHits
+
+
+
+# Muon parametrization (L1 and L3 are produced by HLT paths)
+include "FastSimulation/ParamL3MuonProducer/data/ParamL3Muon.cfi"
+replace paramMuons.MUONS.ProduceL1Muons = false 
+replace paramMuons.MUONS.ProduceL3Muons = false
+
+// Calorimeter emulator (requires doDigis=true)
+include "L1Trigger/Configuration/data/L1CaloEmulator.cff"
+replace caloRecHits.RecHitsFactory.doDigis = true
+
+// The parameterized L1 Muons (much faster than the L1 emulator)
+include "FastSimulation/Muons/data/L1Muons.cfi"
+
+// GT emulator
+// the replace of the DaqActiveBoard allows the GT to run without muon inputs (no longer needed)
+include "L1Trigger/GlobalTrigger/data/l1GtEmulDigis.cfi"
+replace l1GtEmulDigis.GmtInputTag = l1ParamMuons
+
+// L1Extra - provides 4-vector representation of L1 trigger objects - not needed by HLT
+// The muon extra particles are done by L1ParamMuons, but could be done here too.
+// Need to check the difference of efficiencies first.
+include "L1Trigger/Configuration/data/L1Extra.cff"
+replace l1extraParticles.muonSource = l1ParamMuons
+
+// L1 report
+include "L1Trigger/GlobalTriggerAnalyzer/data/l1GtTrigReport.cfi"
+replace l1GtTrigReport.PrintVerbosity = 1
+
+# The hltbegin sequence (with L1 emulator)
+sequence hltBegin = { 
+    ecalTriggerPrimitiveDigis& 
+    hcalTriggerPrimitiveDigis& 
+    L1CaloEmulator&
+    l1ParamMuons&
+    l1GtEmulDigis&
+    l1extraParticles&
+    l1GtTrigReport
+}
+
+# An older L1 sequence (with L1 simulator)
+# this one cannot be used by the HLT as of 17X  use the previous sequence instead 
+#Fast L1 Trigger
+include "FastSimulation/L1CaloTriggerProducer/data/fastl1calosim.cfi"
+include "FastSimulation/L1CaloTriggerProducer/data/fastL1extraParticleMap.cfi"
+replace fastL1CaloSim.AlgorithmSource = "RecHits"
+replace fastL1CaloSim.EmInputs = { "caloRecHits:EcalRecHitsEB", "caloRecHits:EcalRecHitsEE"  }	
+sequence famosWithL1 = { 
+    famosWithCaloTowers& 
+    ecalTriggerPrimitiveDigis& 
+    hcalTriggerPrimitiveDigis& 
+    fastL1CaloSim& 
+    fastL1extraParticleMap 
+} 
+
+# The simulation sequence
+sequence simulationWithFamos = { 
+    famosPileUp,
+    famosSimHits,
+    MuonSimHits,
+    mix, 
+    siTrackerGaussianSmearingRecHits,
+    caloRecHits
+}
+
+# The reconstruction sequence
+sequence reconstructionWithFamos = {
+    ctfGSTracking &
+    iterativeGSTracking &
+    caloTowersPFRec &
+    particleFlowCluster &
+    elecpreid &
+    particleFlowBlock &
+    particleFlow &
+    towerMaker &
+    caloTowers &
+    ecalClusteringSequence &
+    famosElectronSequence &
+    photonSequence &
+    paramMuons &
+    muIsolation_ParamGlobalMuons &
+    caloJetMetGen &
+    caloJetMet &
+    offlineBeamSpot &
+    vertexreco &
+    ic5JetTracksAssociatorAtVertex &
+    famosBTaggingSequence &
+    famosTauTaggingSequence &
+    famosPFTauTaggingSequence
+}
+
+
