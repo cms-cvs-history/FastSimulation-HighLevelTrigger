@@ -23,8 +23,11 @@ include "FastSimulation/ParamL3MuonProducer/data/ParamL3Muon.cfi"
 replace paramMuons.MUONS.ProduceL1Muons = false 
 replace paramMuons.MUONS.ProduceL3Muons = false
 
-// Calorimeter emulator (requires doDigis=true)
-include "L1Trigger/Configuration/data/L1CaloEmulator.cff"
+
+# L1 emulator 
+include "L1Trigger/Configuration/data/L1Emulator.cff"
+
+// The calorimeter emulator requires doDigis=true)
 replace caloRecHits.RecHitsFactory.doDigis = true
 
 // The parameterized L1 Muons (much faster than the L1 emulator)
@@ -32,7 +35,6 @@ include "FastSimulation/Muons/data/L1Muons.cfi"
 
 // GT emulator
 // the replace of the DaqActiveBoard allows the GT to run without muon inputs (no longer needed)
-include "L1Trigger/GlobalTrigger/data/l1GtEmulDigis.cfi"
 replace l1GtEmulDigis.GmtInputTag = l1ParamMuons
 
 // L1Extra - provides 4-vector representation of L1 trigger objects - not needed by HLT
