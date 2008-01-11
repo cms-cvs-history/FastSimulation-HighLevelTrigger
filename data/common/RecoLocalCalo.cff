@@ -24,5 +24,8 @@ sequence ecalLocalRecoSequence = {
     ecalRecHit & 
     ecalPreshowerRecHit 
 }
+sequence ecalLocalRecoSequence_nops = { 
+    ecalRecHit 
+}
 
 sequence  hcalLocalRecoSequence = { hbhereco & hfreco & horeco }
