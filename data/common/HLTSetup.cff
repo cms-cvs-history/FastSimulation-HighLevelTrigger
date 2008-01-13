@@ -1,7 +1,6 @@
 //
-// Running the HLT table directly from Digis on input file
+// Running the HLT table directly from Fast Simulation 
 //
-include "HLTrigger/Configuration/data/common/CaloTowers.cff"
 
 //
 // Tracker = Pixel and Strip
@@ -45,6 +44,10 @@ sequence doLocalRPC     = { muonRPCDigis, rpcRecHits }
 // combined
 sequence doLocalMuon    = { doLocalDT & doLocalCSC & doLocalRPC}
 
-/// Specific reocnstruction sequences for FastSimulation
+// Specific reconstruction sequences for FastSimulation
 include "FastSimulation/HighLevelTrigger/data/common/HLTFastReco.cff"
 
+//
+// Epilogue with endpath of modules for HLT:
+include "HLTrigger/Configuration/data/common/HLTEndpath.cff"
+//

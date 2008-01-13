@@ -1,3 +1,10 @@
+#
+# Load subdetector specific common files
+#
+include "HLTrigger/Configuration/data/common/CaloTowers.cff"
+include "FastSimulation/Tracking/data/PixelVerticesProducer.cff"
+include "FastSimulation/Tracking/data/GlobalPixelTracking.cff"
+
 #Specific reconstruction sequences for FastSimulation.
 include "FastSimulation/HighLevelTrigger/data/JetMET/HLTFastRecoForJetMET.cff"
 include "FastSimulation/HighLevelTrigger/data/Egamma/HLTFastRecoForEgamma.cff"
@@ -27,23 +34,23 @@ replace paramMuons.MUONS.ProduceL3Muons = false
 # L1 emulator 
 include "L1Trigger/Configuration/data/L1Emulator.cff"
 
-// The calorimeter emulator requires doDigis=true)
+# The calorimeter emulator requires doDigis=true)
 replace caloRecHits.RecHitsFactory.doDigis = true
 
-// The parameterized L1 Muons (much faster than the L1 emulator)
+# The parameterized L1 Muons (much faster than the L1 emulator)
 include "FastSimulation/Muons/data/L1Muons.cfi"
 
-// GT emulator
-// the replace of the DaqActiveBoard allows the GT to run without muon inputs (no longer needed)
+# GT emulator
+# the replace of the DaqActiveBoard allows the GT to run without muon inputs (no longer needed)
 replace l1GtEmulDigis.GmtInputTag = l1ParamMuons
 
-// L1Extra - provides 4-vector representation of L1 trigger objects - not needed by HLT
-// The muon extra particles are done by L1ParamMuons, but could be done here too.
-// Need to check the difference of efficiencies first.
+# L1Extra - provides 4-vector representation of L1 trigger objects - not needed by HLT
+# The muon extra particles are done by L1ParamMuons, but could be done here too.
+# Need to check the difference of efficiencies first.
 include "L1Trigger/Configuration/data/L1Extra.cff"
 replace l1extraParticles.muonSource = l1ParamMuons
 
-// L1 report
+# L1 report
 include "L1Trigger/GlobalTriggerAnalyzer/data/l1GtTrigReport.cfi"
 replace l1GtTrigReport.PrintVerbosity = 1
 
@@ -60,7 +67,7 @@ sequence hltBegin = {
 
 # An older L1 sequence (with L1 simulator)
 # this one cannot be used by the HLT as of 17X  use the previous sequence instead 
-#Fast L1 Trigger
+# Fast L1 Trigger
 include "FastSimulation/L1CaloTriggerProducer/data/fastl1calosim.cfi"
 include "FastSimulation/L1CaloTriggerProducer/data/fastL1extraParticleMap.cfi"
 replace fastL1CaloSim.AlgorithmSource = "RecHits"
