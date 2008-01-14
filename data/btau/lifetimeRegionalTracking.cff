@@ -1,7 +1,7 @@
 include "FastSimulation/Tracking/data/GlobalPixelTracking.cff"
 
 # Take all pixel tracks for b tagging track reco (pTMin>1GeV, nHits>=8) 
-module bJetRegionalCtfWithMaterialTracks = FastTrackMerger {
+module hltBLifetimeRegionalCtfWithMaterialTracks = FastTrackMerger {
 
     VInputTag TrackProducers = { 
 	globalPixelGSWithMaterialTracks
@@ -14,11 +14,11 @@ module bJetRegionalCtfWithMaterialTracks = FastTrackMerger {
 }
 
 # Define regional reconstruction path.
-sequence regionalCkfTracks = {
+sequence hltBLifetimeRegionalTracks = {
     globalPixelGSTracking, 
-    bJetRegionalCtfWithMaterialTracks
+    hltBLifetimeRegionalCtfWithMaterialTracks
 }
 
-sequence bL3trackReco = {regionalCkfTracks } 
+sequence hltBLifetimeL3tracking = {hltBLifetimeRegionalTracks } 
 
 
