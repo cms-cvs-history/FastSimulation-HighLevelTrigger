@@ -24,7 +24,7 @@ sequence ecalLocalRecoSequence = {
     ecalRecHit & 
     ecalPreshowerRecHit 
 }
-sequence ecalLocalRecoSequence_nops = { 
+sequence ecalLocalRecoSequence_nopreshower = { 
     ecalRecHit 
 }
 

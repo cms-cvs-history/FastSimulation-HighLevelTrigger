@@ -19,7 +19,7 @@ sequence doLocalTracker = { doLocalPixel & doLocalStrip }
 include "FastSimulation/HighLevelTrigger/data/common/RecoLocalCalo.cff"
 sequence hcalLocalRecoWithoutHO = {hbhereco & hfreco}
 //
-sequence doLocalEcal_nops     = { ecalLocalRecoSequence_nops }
+sequence doLocalEcal_nopreshower  = { ecalLocalRecoSequence_nopreshower }
 sequence doLocalEcal          = { ecalLocalRecoSequence }
 sequence doLocalHcal          = { hcalLocalRecoSequence }
 sequence doLocalHcalWithoutHO = { hcalLocalRecoWithoutHO }
