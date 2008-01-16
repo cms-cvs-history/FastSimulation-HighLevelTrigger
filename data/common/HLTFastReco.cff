@@ -53,11 +53,6 @@ replace l1extraParticles.muonSource = l1ParamMuons
 # The L1MuonParticleRef's must be created from l1ParamMuons (list of replace statements)
 include "FastSimulation/HighLevelTrigger/data/common/hltLevel1GTSeed.cff"
 
-
-# L1 report
-include "L1Trigger/GlobalTriggerAnalyzer/data/l1GtTrigReport.cfi"
-replace l1GtTrigReport.PrintVerbosity = 1
-
 # The hltbegin sequence (with L1 emulator)
 sequence hltBegin = { 
     ecalTriggerPrimitiveDigis& 
@@ -65,8 +60,7 @@ sequence hltBegin = {
     L1CaloEmulator&
     l1ParamMuons&
     l1GtEmulDigis&
-    l1extraParticles&
-    l1GtTrigReport
+    l1extraParticles
 }
 
 # An older L1 sequence (with L1 simulator)
