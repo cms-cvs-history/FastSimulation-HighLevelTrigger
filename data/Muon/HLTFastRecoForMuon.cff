@@ -1,3 +1,19 @@
+# Specific l1extraParticles for muons (temporary).
+replace DiMuonIsoLevel1Seed.L1MuonCollectionTag = l1ParamMuons
+replace DiMuonNoIsoLevel1Seed.L1MuonCollectionTag = l1ParamMuons
+replace JpsiMMLevel1Seed.L1MuonCollectionTag = l1ParamMuons
+replace multiMuonNoIsoLevel1Seed.L1MuonCollectionTag = l1ParamMuons
+replace SameSignMuLevel1Seed.L1MuonCollectionTag = l1ParamMuons
+replace MuLevel1PathLevel1Seed.L1MuonCollectionTag = l1ParamMuons
+replace SingleMuIsoLevel1Seed.L1MuonCollectionTag = l1ParamMuons
+replace SingleMuNoIsoLevel1Seed.L1MuonCollectionTag = l1ParamMuons
+replace SingleMuPrescale3Level1Seed.L1MuonCollectionTag = l1ParamMuons
+replace SingleMuPrescale5Level1Seed.L1MuonCollectionTag = l1ParamMuons
+replace SingleMuPrescale710Level1Seed.L1MuonCollectionTag = l1ParamMuons
+replace SingleMuPrescale77Level1Seed.L1MuonCollectionTag = l1ParamMuons
+replace UpsilonMMLevel1Seed.L1MuonCollectionTag = l1ParamMuons
+replace ZMMLevel1Seed.L1MuonCollectionTag = l1ParamMuons
+
 ### RecoMuon flux ##########################################################
 
 ## L2 seeds from L1 input

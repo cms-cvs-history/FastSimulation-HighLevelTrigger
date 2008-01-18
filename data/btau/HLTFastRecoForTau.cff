@@ -1,3 +1,8 @@
+# Specific l1extraParticles for muons (temporary).
+replace doubleTauL1SeedFilter.L1MuonCollectionTag = l1ParamMuons
+replace singleTauL1SeedFilter.L1MuonCollectionTag = l1ParamMuons
+replace singleTauMETL1SeedFilter.L1MuonCollectionTag = l1ParamMuons
+
 #Primary Vertex
 include "FastSimulation/Tracking/data/PixelVerticesProducer.cff"
 

@@ -1,3 +1,11 @@
+# Specific l1extraParticles for muons (temporary).
+replace l1seedSingle.L1MuonCollectionTag = l1ParamMuons
+replace l1seedRelaxedSingle.L1MuonCollectionTag = l1ParamMuons
+replace l1seedDouble.L1MuonCollectionTag = l1ParamMuons
+replace l1seedRelaxedDouble.L1MuonCollectionTag = l1ParamMuons
+replace l1seedExclusiveDouble.L1MuonCollectionTag = l1ParamMuons
+replace l1seedSinglePrescaled.L1MuonCollectionTag = l1ParamMuons
+
 # Seeding for electrons (small windows)
 include "FastSimulation/EgammaElectronAlgos/data/pixelMatchElectronL1IsoSequenceForHLT.cff"
 include "FastSimulation/EgammaElectronAlgos/data/pixelMatchElectronL1NonIsoSequenceForHLT.cff"

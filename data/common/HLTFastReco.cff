@@ -6,12 +6,13 @@ include "FastSimulation/Tracking/data/PixelVerticesProducer.cff"
 include "FastSimulation/Tracking/data/GlobalPixelTracking.cff"
 
 #Specific reconstruction sequences for FastSimulation.
-include "FastSimulation/HighLevelTrigger/data/JetMET/HLTFastRecoForJetMET.cff"
-include "FastSimulation/HighLevelTrigger/data/Egamma/HLTFastRecoForEgamma.cff"
+#include "FastSimulation/HighLevelTrigger/data/JetMET/HLTFastRecoForJetMET.cff"
+#include "FastSimulation/HighLevelTrigger/data/Egamma/HLTFastRecoForEgamma.cff"
 include "FastSimulation/HighLevelTrigger/data/Muon/HLTFastRecoForMuon.cff"
-include "FastSimulation/HighLevelTrigger/data/btau/HLTFastRecoForTau.cff"
-include "FastSimulation/HighLevelTrigger/data/btau/HLTFastRecoForB.cff"
-include "FastSimulation/HighLevelTrigger/data/special/HLTFastRecoForSpecial.cff"
+#include "FastSimulation/HighLevelTrigger/data/btau/HLTFastRecoForTau.cff"
+#include "FastSimulation/HighLevelTrigger/data/btau/HLTFastRecoForB.cff"
+#include "FastSimulation/HighLevelTrigger/data/xchannel/HLTFastRecoForXchannel.cff"
+#include "FastSimulation/HighLevelTrigger/data/special/HLTFastRecoForSpecial.cff"
 
 # An additional towerMaker !
 include "RecoJets/JetProducers/data/CaloTowerSchemeB.cfi"
@@ -49,10 +50,6 @@ replace l1GtEmulDigis.GmtInputTag = l1ParamMuons
 # Need to check the difference of efficiencies first.
 include "L1Trigger/Configuration/data/L1Extra.cff"
 replace l1extraParticles.muonSource = l1ParamMuons
-
-# The L1MuonParticleRef's must be created from l1ParamMuons (list of replace statements)
-include "FastSimulation/HighLevelTrigger/data/common/hltLevel1GTSeed.cff"
-
 
 # L1 report
 replace l1gtTrigReport.PrintVerbosity = 1
