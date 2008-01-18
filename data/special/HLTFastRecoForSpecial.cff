@@ -15,6 +15,7 @@ replace pixelTripletSeedsForMinBias.thirdHitSubDetectorNumber = { 2 }
 replace pixelTripletSeedsForMinBias.thirdHitSubDetectors = {1,2}
 replace pixelTripletSeedsForMinBias.seedingAlgo      = {"PixelTriplet"}  
 replace pixelTripletSeedsForMinBias.originpTMin = {0.2}    
+replace pixelTripletSeedsForMinBias.pTMin = {0.2}    
 
 module pixelTracksForMinBias = pixelTracks from "FastSimulation/Tracking/data/PixelTracksProducer.cfi"
 replace pixelTracksForMinBias.SeedProducer = pixelTripletSeedsForMinBias:PixelTriplet
