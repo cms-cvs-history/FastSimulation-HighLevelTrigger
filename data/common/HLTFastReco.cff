@@ -6,13 +6,13 @@ include "FastSimulation/Tracking/data/PixelVerticesProducer.cff"
 include "FastSimulation/Tracking/data/GlobalPixelTracking.cff"
 
 #Specific reconstruction sequences for FastSimulation.
-#include "FastSimulation/HighLevelTrigger/data/JetMET/HLTFastRecoForJetMET.cff"
-#include "FastSimulation/HighLevelTrigger/data/Egamma/HLTFastRecoForEgamma.cff"
+include "FastSimulation/HighLevelTrigger/data/JetMET/HLTFastRecoForJetMET.cff"
+include "FastSimulation/HighLevelTrigger/data/Egamma/HLTFastRecoForEgamma.cff"
 include "FastSimulation/HighLevelTrigger/data/Muon/HLTFastRecoForMuon.cff"
-#include "FastSimulation/HighLevelTrigger/data/btau/HLTFastRecoForTau.cff"
-#include "FastSimulation/HighLevelTrigger/data/btau/HLTFastRecoForB.cff"
-#include "FastSimulation/HighLevelTrigger/data/xchannel/HLTFastRecoForXchannel.cff"
-#include "FastSimulation/HighLevelTrigger/data/special/HLTFastRecoForSpecial.cff"
+include "FastSimulation/HighLevelTrigger/data/btau/HLTFastRecoForTau.cff"
+include "FastSimulation/HighLevelTrigger/data/btau/HLTFastRecoForB.cff"
+include "FastSimulation/HighLevelTrigger/data/xchannel/HLTFastRecoForXchannel.cff"
+include "FastSimulation/HighLevelTrigger/data/special/HLTFastRecoForSpecial.cff"
 
 # An additional towerMaker !
 include "RecoJets/JetProducers/data/CaloTowerSchemeB.cfi"
