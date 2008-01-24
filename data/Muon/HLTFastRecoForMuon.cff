@@ -14,6 +14,21 @@ replace SingleMuPrescale77Level1Seed.L1MuonCollectionTag = l1ParamMuons
 replace UpsilonMMLevel1Seed.L1MuonCollectionTag = l1ParamMuons
 replace ZMMLevel1Seed.L1MuonCollectionTag = l1ParamMuons
 
+replace DiMuonIsoLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace DiMuonNoIsoLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace JpsiMMLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace multiMuonNoIsoLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace SameSignMuLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace MuLevel1PathLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace SingleMuIsoLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace SingleMuNoIsoLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace SingleMuPrescale3Level1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace SingleMuPrescale5Level1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace SingleMuPrescale710Level1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace SingleMuPrescale77Level1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace UpsilonMMLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace ZMMLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+
 ### RecoMuon flux ##########################################################
 
 ## L2 seeds from L1 input

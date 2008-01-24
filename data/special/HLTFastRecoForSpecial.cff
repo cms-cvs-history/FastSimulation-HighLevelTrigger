@@ -6,6 +6,13 @@ replace hltl1sMin.L1MuonCollectionTag = l1ParamMuons
 replace hltl1sZero.L1MuonCollectionTag = l1ParamMuons
 replace l1sIsolTrack.L1MuonCollectionTag = l1ParamMuons
 
+replace l1sEcalPhiSym.L1GtReadoutRecordTag = l1GtEmulDigis
+replace l1sEcalPi0.L1GtReadoutRecordTag = l1GtEmulDigis
+replace l1seedMinBiasPixel.L1GtReadoutRecordTag = l1GtEmulDigis
+replace hltl1sMin.L1GtReadoutRecordTag = l1GtEmulDigis
+replace hltl1sZero.L1GtReadoutRecordTag = l1GtEmulDigis
+replace l1sIsolTrack.L1GtReadoutRecordTag = l1GtEmulDigis
+
 # Pixel track find for minbias
 #   very low pt threshold. Even if only high-pt tracks
 #   are selected, the low-Pt might be wanted to check 

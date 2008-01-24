@@ -10,3 +10,14 @@ replace hltLevel1GTSeedMuonTau.L1MuonCollectionTag = l1ParamMuons
 replace hltEMuonLevel1Seed.L1MuonCollectionTag = l1ParamMuons
 replace hltemuNonIsoLevel1Seed.L1MuonCollectionTag = l1ParamMuons
 
+replace HLTElectronBL1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace l1seedEJet.L1GtReadoutRecordTag = l1GtEmulDigis
+replace hltLevel1GTSeedElectronTau.L1GtReadoutRecordTag = l1GtEmulDigis
+replace MuBLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace MuJetsLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace MuNoIsoJetsLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace MuNoL2IsoJetsLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace hltLevel1GTSeedMuonTau.L1GtReadoutRecordTag = l1GtEmulDigis
+replace hltEMuonLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace hltemuNonIsoLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+
