@@ -62,7 +62,8 @@ sequence hltBegin = {
     L1CaloEmulator&
     l1ParamMuons&
     l1GtEmulDigis&
-    l1extraParticles
+    l1extraParticles&
+    offlineBeamSpot
 }
 
 # An older L1 sequence (with L1 simulator)
