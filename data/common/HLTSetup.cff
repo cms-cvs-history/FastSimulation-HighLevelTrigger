@@ -49,5 +49,5 @@ include "FastSimulation/HighLevelTrigger/data/common/HLTFastReco.cff"
 
 //
 // Epilogue with endpath of modules for HLT:
-include "HLTrigger/Configuration/data/common/HLTEndpath.cff"
+include "FastSimulation/HighLevelTrigger/data/common/HLTEndpath.cff"
 //
