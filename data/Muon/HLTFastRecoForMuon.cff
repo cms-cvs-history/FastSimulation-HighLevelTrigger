@@ -14,20 +14,20 @@ replace SingleMuPrescale77Level1Seed.L1MuonCollectionTag = l1ParamMuons
 replace UpsilonMMLevel1Seed.L1MuonCollectionTag = l1ParamMuons
 replace ZMMLevel1Seed.L1MuonCollectionTag = l1ParamMuons
 
-replace DiMuonIsoLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
-replace DiMuonNoIsoLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
-replace JpsiMMLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
-replace multiMuonNoIsoLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
-replace SameSignMuLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
-replace MuLevel1PathLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
-replace SingleMuIsoLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
-replace SingleMuNoIsoLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
-replace SingleMuPrescale3Level1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
-replace SingleMuPrescale5Level1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
-replace SingleMuPrescale710Level1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
-replace SingleMuPrescale77Level1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
-replace UpsilonMMLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
-replace ZMMLevel1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace DiMuonIsoLevel1Seed.L1GtReadoutRecordTag = gtDigis
+replace DiMuonNoIsoLevel1Seed.L1GtReadoutRecordTag = gtDigis
+replace JpsiMMLevel1Seed.L1GtReadoutRecordTag = gtDigis
+replace multiMuonNoIsoLevel1Seed.L1GtReadoutRecordTag = gtDigis
+replace SameSignMuLevel1Seed.L1GtReadoutRecordTag = gtDigis
+replace MuLevel1PathLevel1Seed.L1GtReadoutRecordTag = gtDigis
+replace SingleMuIsoLevel1Seed.L1GtReadoutRecordTag = gtDigis
+replace SingleMuNoIsoLevel1Seed.L1GtReadoutRecordTag = gtDigis
+replace SingleMuPrescale3Level1Seed.L1GtReadoutRecordTag = gtDigis
+replace SingleMuPrescale5Level1Seed.L1GtReadoutRecordTag = gtDigis
+replace SingleMuPrescale710Level1Seed.L1GtReadoutRecordTag = gtDigis
+replace SingleMuPrescale77Level1Seed.L1GtReadoutRecordTag = gtDigis
+replace UpsilonMMLevel1Seed.L1GtReadoutRecordTag = gtDigis
+replace ZMMLevel1Seed.L1GtReadoutRecordTag = gtDigis
 
 ### RecoMuon flux ##########################################################
 

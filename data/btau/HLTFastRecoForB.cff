@@ -4,10 +4,10 @@ replace hltBSoftmuonNjetL1seeds.L1MuonCollectionTag = l1ParamMuons
 replace hltBSoftmuonHTL1seeds.L1MuonCollectionTag = l1ParamMuons
 replace JpsitoMumuL1Seed.L1MuonCollectionTag = l1ParamMuons
 
-replace hltBLifetimeL1seeds.L1GtReadoutRecordTag = l1GtEmulDigis
-replace hltBSoftmuonNjetL1seeds.L1GtReadoutRecordTag = l1GtEmulDigis
-replace hltBSoftmuonHTL1seeds.L1GtReadoutRecordTag = l1GtEmulDigis
-replace JpsitoMumuL1Seed.L1GtReadoutRecordTag = l1GtEmulDigis
+replace hltBLifetimeL1seeds.L1GtReadoutRecordTag = gtDigis
+replace hltBSoftmuonNjetL1seeds.L1GtReadoutRecordTag = gtDigis
+replace hltBSoftmuonHTL1seeds.L1GtReadoutRecordTag = gtDigis
+replace JpsitoMumuL1Seed.L1GtReadoutRecordTag = gtDigis
 
 # Reconstruct pixel tracks and vertices
 include "FastSimulation/HighLevelTrigger/data/btau/pixelReco.cff"

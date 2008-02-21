@@ -7,12 +7,12 @@ replace l1seedExclusiveDouble.L1MuonCollectionTag = l1ParamMuons
 replace l1seedSinglePrescaled.L1MuonCollectionTag = l1ParamMuons
 
 # Specific l1extraParticles for muons (temporary).
-replace l1seedSingle.L1GtReadoutRecordTag = l1GtEmulDigis
-replace l1seedRelaxedSingle.L1GtReadoutRecordTag = l1GtEmulDigis
-replace l1seedDouble.L1GtReadoutRecordTag = l1GtEmulDigis
-replace l1seedRelaxedDouble.L1GtReadoutRecordTag = l1GtEmulDigis
-replace l1seedExclusiveDouble.L1GtReadoutRecordTag = l1GtEmulDigis
-replace l1seedSinglePrescaled.L1GtReadoutRecordTag = l1GtEmulDigis
+replace l1seedSingle.L1GtReadoutRecordTag = gtDigis
+replace l1seedRelaxedSingle.L1GtReadoutRecordTag = gtDigis
+replace l1seedDouble.L1GtReadoutRecordTag = gtDigis
+replace l1seedRelaxedDouble.L1GtReadoutRecordTag = gtDigis
+replace l1seedExclusiveDouble.L1GtReadoutRecordTag = gtDigis
+replace l1seedSinglePrescaled.L1GtReadoutRecordTag = gtDigis
 
 # Seeding for electrons (small windows)
 include "FastSimulation/EgammaElectronAlgos/data/pixelMatchElectronL1IsoSequenceForHLT.cff"
