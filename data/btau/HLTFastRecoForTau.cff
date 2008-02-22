@@ -3,9 +3,9 @@ replace doubleTauL1SeedFilter.L1MuonCollectionTag = l1ParamMuons
 replace singleTauL1SeedFilter.L1MuonCollectionTag = l1ParamMuons
 replace singleTauMETL1SeedFilter.L1MuonCollectionTag = l1ParamMuons
 
-replace doubleTauL1SeedFilter.L1GtReadoutRecordTag = gtDigis
-replace singleTauL1SeedFilter.L1GtReadoutRecordTag = gtDigis
-replace singleTauMETL1SeedFilter.L1GtReadoutRecordTag = gtDigis
+replace doubleTauL1SeedFilter.L1GtObjectMapTag = gtDigis
+replace singleTauL1SeedFilter.L1GtObjectMapTag = gtDigis
+replace singleTauMETL1SeedFilter.L1GtObjectMapTag = gtDigis
 
 #Primary Vertex
 include "FastSimulation/Tracking/data/PixelVerticesProducer.cff"

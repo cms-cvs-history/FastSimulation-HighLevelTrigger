@@ -10,14 +10,14 @@ replace hltLevel1GTSeedMuonTau.L1MuonCollectionTag = l1ParamMuons
 replace hltEMuonLevel1Seed.L1MuonCollectionTag = l1ParamMuons
 replace hltemuNonIsoLevel1Seed.L1MuonCollectionTag = l1ParamMuons
 
-replace HLTElectronBL1Seed.L1GtReadoutRecordTag = gtDigis
-replace l1seedEJet.L1GtReadoutRecordTag = gtDigis
-replace hltLevel1GTSeedElectronTau.L1GtReadoutRecordTag = gtDigis
-replace MuBLevel1Seed.L1GtReadoutRecordTag = gtDigis
-replace MuJetsLevel1Seed.L1GtReadoutRecordTag = gtDigis
-replace MuNoIsoJetsLevel1Seed.L1GtReadoutRecordTag = gtDigis
-replace MuNoL2IsoJetsLevel1Seed.L1GtReadoutRecordTag = gtDigis
-replace hltLevel1GTSeedMuonTau.L1GtReadoutRecordTag = gtDigis
-replace hltEMuonLevel1Seed.L1GtReadoutRecordTag = gtDigis
-replace hltemuNonIsoLevel1Seed.L1GtReadoutRecordTag = gtDigis
+replace HLTElectronBL1Seed.L1GtObjectMapTag = gtDigis
+replace l1seedEJet.L1GtObjectMapTag = gtDigis
+replace hltLevel1GTSeedElectronTau.L1GtObjectMapTag = gtDigis
+replace MuBLevel1Seed.L1GtObjectMapTag = gtDigis
+replace MuJetsLevel1Seed.L1GtObjectMapTag = gtDigis
+replace MuNoIsoJetsLevel1Seed.L1GtObjectMapTag = gtDigis
+replace MuNoL2IsoJetsLevel1Seed.L1GtObjectMapTag = gtDigis
+replace hltLevel1GTSeedMuonTau.L1GtObjectMapTag = gtDigis
+replace hltEMuonLevel1Seed.L1GtObjectMapTag = gtDigis
+replace hltemuNonIsoLevel1Seed.L1GtObjectMapTag = gtDigis
 

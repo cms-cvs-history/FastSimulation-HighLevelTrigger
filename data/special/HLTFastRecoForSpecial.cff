@@ -7,13 +7,13 @@ replace hltl1sMin.L1MuonCollectionTag = l1ParamMuons
 replace hltl1sZero.L1MuonCollectionTag = l1ParamMuons
 replace l1sIsolTrack.L1MuonCollectionTag = l1ParamMuons
 
-replace l1sEcalPhiSym.L1GtReadoutRecordTag = gtDigis
-replace l1sHcalPhiSym.L1GtReadoutRecordTag = gtDigis
-replace l1sEcalPi0.L1GtReadoutRecordTag = gtDigis
-replace l1seedMinBiasPixel.L1GtReadoutRecordTag = gtDigis
-replace hltl1sMin.L1GtReadoutRecordTag = gtDigis
-replace hltl1sZero.L1GtReadoutRecordTag = gtDigis
-replace l1sIsolTrack.L1GtReadoutRecordTag = gtDigis
+replace l1sEcalPhiSym.L1GtObjectMapTag = gtDigis
+replace l1sHcalPhiSym.L1GtObjectMapTag = gtDigis
+replace l1sEcalPi0.L1GtObjectMapTag = gtDigis
+replace l1seedMinBiasPixel.L1GtObjectMapTag = gtDigis
+replace hltl1sMin.L1GtObjectMapTag = gtDigis
+replace hltl1sZero.L1GtObjectMapTag = gtDigis
+replace l1sIsolTrack.L1GtObjectMapTag = gtDigis
 
 # Pixel track find for minbias
 #   very low pt threshold. Even if only high-pt tracks

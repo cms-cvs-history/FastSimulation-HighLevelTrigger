@@ -14,20 +14,20 @@ replace SingleMuPrescale77Level1Seed.L1MuonCollectionTag = l1ParamMuons
 replace UpsilonMMLevel1Seed.L1MuonCollectionTag = l1ParamMuons
 replace ZMMLevel1Seed.L1MuonCollectionTag = l1ParamMuons
 
-replace DiMuonIsoLevel1Seed.L1GtReadoutRecordTag = gtDigis
-replace DiMuonNoIsoLevel1Seed.L1GtReadoutRecordTag = gtDigis
-replace JpsiMMLevel1Seed.L1GtReadoutRecordTag = gtDigis
-replace multiMuonNoIsoLevel1Seed.L1GtReadoutRecordTag = gtDigis
-replace SameSignMuLevel1Seed.L1GtReadoutRecordTag = gtDigis
-replace MuLevel1PathLevel1Seed.L1GtReadoutRecordTag = gtDigis
-replace SingleMuIsoLevel1Seed.L1GtReadoutRecordTag = gtDigis
-replace SingleMuNoIsoLevel1Seed.L1GtReadoutRecordTag = gtDigis
-replace SingleMuPrescale3Level1Seed.L1GtReadoutRecordTag = gtDigis
-replace SingleMuPrescale5Level1Seed.L1GtReadoutRecordTag = gtDigis
-replace SingleMuPrescale710Level1Seed.L1GtReadoutRecordTag = gtDigis
-replace SingleMuPrescale77Level1Seed.L1GtReadoutRecordTag = gtDigis
-replace UpsilonMMLevel1Seed.L1GtReadoutRecordTag = gtDigis
-replace ZMMLevel1Seed.L1GtReadoutRecordTag = gtDigis
+replace DiMuonIsoLevel1Seed.L1GtObjectMapTag = gtDigis
+replace DiMuonNoIsoLevel1Seed.L1GtObjectMapTag = gtDigis
+replace JpsiMMLevel1Seed.L1GtObjectMapTag = gtDigis
+replace multiMuonNoIsoLevel1Seed.L1GtObjectMapTag = gtDigis
+replace SameSignMuLevel1Seed.L1GtObjectMapTag = gtDigis
+replace MuLevel1PathLevel1Seed.L1GtObjectMapTag = gtDigis
+replace SingleMuIsoLevel1Seed.L1GtObjectMapTag = gtDigis
+replace SingleMuNoIsoLevel1Seed.L1GtObjectMapTag = gtDigis
+replace SingleMuPrescale3Level1Seed.L1GtObjectMapTag = gtDigis
+replace SingleMuPrescale5Level1Seed.L1GtObjectMapTag = gtDigis
+replace SingleMuPrescale710Level1Seed.L1GtObjectMapTag = gtDigis
+replace SingleMuPrescale77Level1Seed.L1GtObjectMapTag = gtDigis
+replace UpsilonMMLevel1Seed.L1GtObjectMapTag = gtDigis
+replace ZMMLevel1Seed.L1GtObjectMapTag = gtDigis
 
 ### RecoMuon flux ##########################################################
 
