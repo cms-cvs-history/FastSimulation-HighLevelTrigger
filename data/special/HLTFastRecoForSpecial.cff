@@ -46,3 +46,5 @@ include "FastSimulation/Tracking/data/PixelTracksProducer.cfi"
 sequence pixelTrackingForIsol = {
     pixelGSTracking
 }
+
+module filterTriggerType = hltBool from "HLTrigger/HLTfilters/data/hltBool.cfi"
