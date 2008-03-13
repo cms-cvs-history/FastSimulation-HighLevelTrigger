@@ -1,5 +1,5 @@
 # Calo Towers
-include "RecoJets/JetProducers/data/CaloTowerSchemeB.cfi" 
+include "RecoJets/Configuration/data/CaloTowersRec.cff" 
 replace towerMaker.ecalInputs = { 
     "caloRecHits:EcalRecHitsEB", 
     "caloRecHits:EcalRecHitsEE" 
@@ -7,13 +7,6 @@ replace towerMaker.ecalInputs = {
 replace towerMaker.hbheInput = caloRecHits
 replace towerMaker.hfInput = caloRecHits
 replace towerMaker.hoInput = caloRecHits
-
-module caloTowers = CaloTowerCandidateCreator {
-           InputTag src = towerMaker
-           double minimumEt = -1
-           double minimumE = -1
-   }
-sequence caloTowersRec = { towerMaker, caloTowers }
 
 # Muon parametrization (L1 and L3 are not produced by HLT paths)
 include "FastSimulation/ParamL3MuonProducer/data/ParamL3Muon.cfi"
