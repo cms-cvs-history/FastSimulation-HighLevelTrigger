@@ -6,6 +6,12 @@ replace l1seedMinBiasPixel.L1MuonCollectionTag = l1ParamMuons
 replace hltl1sMin.L1MuonCollectionTag = l1ParamMuons
 replace hltl1sZero.L1MuonCollectionTag = l1ParamMuons
 replace l1sIsolTrack.L1MuonCollectionTag = l1ParamMuons
+replace level1seedHLTBackwardBSC.L1MuonCollectionTag = l1ParamMuons
+replace level1seedHLTForwardBSC.L1MuonCollectionTag = l1ParamMuons
+replace level1seedHLTCSCBeamHalo.L1MuonCollectionTag = l1ParamMuons
+replace level1seedHLTCSCBeamHaloOverlapRing1.L1MuonCollectionTag = l1ParamMuons
+replace level1seedHLTCSCBeamHaloOverlapRing2.L1MuonCollectionTag = l1ParamMuons
+replace level1seedHLTCSCBeamHaloRing2or3.L1MuonCollectionTag = l1ParamMuons
 
 replace l1sEcalPhiSym.L1GtObjectMapTag = gtDigis
 replace l1sHcalPhiSym.L1GtObjectMapTag = gtDigis
@@ -14,6 +20,12 @@ replace l1seedMinBiasPixel.L1GtObjectMapTag = gtDigis
 replace hltl1sMin.L1GtObjectMapTag = gtDigis
 replace hltl1sZero.L1GtObjectMapTag = gtDigis
 replace l1sIsolTrack.L1GtObjectMapTag = gtDigis
+replace level1seedHLTBackwardBSC.L1GtObjectMapTag = gtDigis
+replace level1seedHLTForwardBSC.L1GtObjectMapTag = gtDigis
+replace level1seedHLTCSCBeamHalo.L1GtObjectMapTag = gtDigis
+replace level1seedHLTCSCBeamHaloOverlapRing1.L1GtObjectMapTag = gtDigis
+replace level1seedHLTCSCBeamHaloOverlapRing2.L1GtObjectMapTag = gtDigis
+replace level1seedHLTCSCBeamHaloRing2or3.L1GtObjectMapTag = gtDigis
 
 # Pixel track find for minbias
 #   very low pt threshold. Even if only high-pt tracks
