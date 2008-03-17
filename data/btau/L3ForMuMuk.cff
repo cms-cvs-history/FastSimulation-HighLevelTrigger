@@ -1,0 +1,36 @@
+include "FastSimulation/Tracking/data/GlobalPixelTracking.cff"
+
+# Take all pixel-seeded tracks for b tagging track reco (pTMin>1GeV, nHits>=8) 
+module hltCtfWithMaterialTracksMumuk = FastTrackMerger {
+
+    VInputTag TrackProducers = { 
+	globalPixelGSWithMaterialTracks
+    }
+
+    untracked bool SaveTracksOnly = true
+    untracked double ptMin = 3.0
+    untracked uint32 minHits = 5
+
+}
+
+# produce ChargedCandidates from tracks
+module hltMumukAllConeTracks = ConcreteChargedCandidateProducer {
+  InputTag src = hltCtfWithMaterialTracksMumuk
+  string particleType = "mu-"
+}
+
+sequence hltMumukTracking = { 
+    l3muonreco & 
+    hltCtfWithMaterialTracksMumuk
+}
+
+sequence hltMumukCandidates = {
+    hltMumukAllConeTracks
+}
+
+sequence l3MumukReco = {
+    (doLocalPixel & doLocalStrip) 
+    & recopixelvertexing 
+    & hltMumukTracking 
+    & hltMumukCandidates
+}

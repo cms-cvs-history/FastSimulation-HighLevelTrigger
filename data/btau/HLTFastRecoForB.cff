@@ -19,4 +19,6 @@ include "FastSimulation/HighLevelTrigger/data/btau/lifetimeRegionalTracking.cff"
 
 # Reconstruct muons for JPsiToMumu
 include "FastSimulation/HighLevelTrigger/data/btau/L3ForDisplacedMumuTrigger.cff"
+# Reconstruct muons for MumuK
+include "FastSimulation/HighLevelTrigger/data/btau/L3ForMuMuk.cff"
 #include "FastSimulation/HighLevelTrigger/data/btau/L3ForDisplacedMumuLooseTrigger.cff"
