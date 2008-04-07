@@ -1,0 +1,82 @@
+### Open-HLT inclues, modules and paths for Egamma
+path DoHltPhoton = {
+    hltBegin  
+    & doRegionalEgammaEcal
+    & l1IsolatedEcalClusters 
+    & l1NonIsolatedEcalClusters
+    & l1IsoRecoEcalCandidate
+    & l1NonIsoRecoEcalCandidate
+    & l1IsolatedPhotonEcalIsol
+    & l1NonIsolatedPhotonEcalIsol
+    & doLocalHcalWithoutHO
+    & l1IsolatedPhotonHcalIsol
+    & l1NonIsolatedPhotonHcalIsol
+    & doLocalPixel
+    & doLocalStrip
+    & l1IsoEgammaRegionalRecoTracker
+    & l1NonIsoEgammaRegionalRecoTracker
+    & l1IsoPhotonTrackIsol
+    & l1NonIsoPhotonTrackIsol
+}
+
+path DoHltElectron = {
+    hltBegin   
+    & doRegionalEgammaEcal 
+    & l1IsolatedEcalClusters 
+    & l1NonIsolatedEcalClusters 
+    & l1IsoRecoEcalCandidate 
+    & l1NonIsoRecoEcalCandidate 
+    ## & MyMatchFilterRegional
+    & doLocalHcalWithoutHO 
+    & l1IsolatedElectronHcalIsol 
+    & l1NonIsolatedElectronHcalIsol 
+    & doLocalPixel 
+    & pixelMatchElectronL1IsoSequenceForHLT 
+    & pixelMatchElectronL1NonIsoSequenceForHLT 
+    & doLocalStrip // strip rechit for the electron tracking
+    & pixelMatchElectronL1IsoTrackingSequenceForHLT 
+    & pixelMatchElectronL1NonIsoTrackingSequenceForHLT 
+    ## & hltL1NonIsoSingleElectronEoverpFilter 
+    & l1IsoElectronsRegionalRecoTracker 
+    & l1NonIsoElectronsRegionalRecoTracker 
+    & l1IsoElectronTrackIsol 
+    & l1NonIsoElectronTrackIsol
+}
+
+
+ path DoHltElectronLargeWindows = {
+    hltBegin &
+    doRegionalEgammaEcal &
+    l1IsolatedEcalClusters &
+    l1NonIsolatedEcalClusters &
+    l1IsoRecoEcalCandidate &
+    l1NonIsoRecoEcalCandidate &
+    doLocalHcalWithoutHO &
+    l1IsolatedElectronHcalIsol & 
+    l1NonIsolatedElectronHcalIsol & 
+    doLocalPixel & 
+    pixelMatchElectronL1IsoLargeWindowSequenceForHLT & 
+    pixelMatchElectronL1NonIsoLargeWindowSequenceForHLT & 
+    doLocalStrip & 
+    pixelMatchElectronL1IsoLargeWindowTrackingSequenceForHLT &
+    pixelMatchElectronL1NonIsoLargeWindowTrackingSequenceForHLT &
+    l1IsoLargeWindowElectronsRegionalRecoTracker & 
+    l1NonIsoLargeWindowElectronsRegionalRecoTracker & 
+    l1IsoLargeWindowElectronTrackIsol & 
+    l1NonIsoLargeWindowElectronTrackIsol  
+}
+
+### Open-HLT includes, modules and paths for Muon
+include "HLTrigger/Muon/data/OnlyReco.cff"
+path DoHltMuon = { 
+    hltBegin & 
+    recoHLTMuIso 
+}
+
+
+### Open-HLT includes, modules and paths for JetMET
+path DoHltJetMET = {
+    hltBegin &
+    recoJetMETPath
+}
+

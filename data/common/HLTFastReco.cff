@@ -57,6 +57,7 @@ replace l1gtTrigReport.PrintOutput = 2
 
 # The hltbegin sequence (with L1 emulator)
 sequence hltBegin = { 
+    simulation &
     ecalTriggerPrimitiveDigis& 
     hcalTriggerPrimitiveDigis& 
     L1CaloEmulator&

@@ -42,6 +42,7 @@ include "FastSimulation/Muons/data/L3Muons.cff"
 module hltL3Muons = L3Muons from "FastSimulation/Muons/data/L3Muons.cfi"
 replace hltL3Muons.MuonCollectionLabel = hltL2Muons:UpdatedAtVtx
 replace hltL3Muons.L3TrajBuilderParameters.TrackerTrajectories = globalPixelGSWithMaterialTracks
+replace hltL3Muons.L3TrajBuilderParameters.StateOnTrackerBoundOutPropagator = "SmartPropagator"
 
 sequence hltL3MuonTracks = { 
     globalPixelGSTracking,  // Pixel-pair-seeded tracks
