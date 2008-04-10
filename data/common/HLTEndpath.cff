@@ -13,6 +13,16 @@ module l1gtTrigReport = l1GtTrigReport from "L1Trigger/GlobalTriggerAnalyzer/dat
 //
 // HL Trigger Report (print to log file)
 module hltTrigReport = hlTrigReport from "HLTrigger/HLTanalyzers/data/hlTrigReport.cfi"
+        module triggerSummaryProducerAOD = TriggerSummaryProducerAOD {
+                string processName = "@"
+                using TriggerSummaryAOD
+         }
+
+         module triggerSummaryAOD = TriggerSummaryProducerAOD {
+                string processName = "@"
+                VInputTag collections = {l1IsoRecoEcalCandidate, l1NonIsoRecoEcalCandidate, pixelMatchElectronsL1IsoForHLT, pixelMatchElectronsL1NonIsoForHLT, pixelMatchElectronsL1IsoLargeWindowForHLT, pixelMatchElectronsL1NonIsoLargeWindowForHLT, hltL3MuonCandidates, hltL2MuonCandidates, MCJetCorJetIcone5, iterativeCone5CaloJets, MCJetCorJetIcone5Regional, iterativeCone5CaloJetsRegional, met, htMet, htMetIC5, isolatedL3SingleTau, isolatedL3SingleTauMET, isolatedL25PixelTau, hltBLifetimeL3Jets, hltBSoftmuonL25Jets, hltMuTracks, hltMuTracks, hltMumukAllConeTracks, hltL3MuonCandidates, hltPixelTrackIsolatedTauJetsSelectorMuonTau, l1IsoRecoEcalCandidate, pixelMatchElectronsL1IsoForHLT, hltPixelTrackIsolatedTauJetsSelectorElectronTau, hltIsolatedTauJetsSelectorL3ElectronTau, hltL3MuonCandidates, hltBSoftmuonL3BJetTags, hltL3MuonCandidates, hltBLifetimeL3BJetTags, l1IsoRecoEcalCandidate, l1NonIsoRecoEcalCandidate, pixelMatchElectronsL1IsoForHLT, pixelMatchElectronsL1NonIsoForHLT, hltBLifetimeL3BJetTags, l1IsoRecoEcalCandidate, l1NonIsoRecoEcalCandidate, pixelMatchElectronsL1IsoForHLT, pixelMatchElectronsL1NonIsoForHLT, hltL3MuonCandidates, hltL2MuonCandidates, hltL3MuonCandidates, MCJetCorJetIcone5, iterativeCone5CaloJets, MCJetCorJetIcone5Regional, iterativeCone5CaloJetsRegional, isolPixelTrackProd}
+               VInputTag filters = {hltL1IsoSinglePhotonTrackIsolFilter, hltL1NonIsoSinglePhotonTrackIsolFilter, hltL1IsoDoublePhotonDoubleEtFilter, hltL1NonIsoDoublePhotonDoubleEtFilter, hltL1NonIsoSingleEMHighEtTrackIsolFilter, hltL1NonIsoSinglePhotonEMVeryHighEtEtFilter, hltL1IsoDoubleExclPhotonTrackIsolFilter, hltL1IsoSinglePhotonPrescaledTrackIsolFilter, hltL1IsoSingleElectronTrackIsolFilter, hltL1NonIsoSingleElectronTrackIsolFilter, hltL1IsoDoubleElectronTrackIsolFilter, hltL1NonIsoDoubleElectronTrackIsolFilter, hltL1IsoDoubleExclElectronTrackIsolFilter, hltL1IsoDoubleElectronZeePMMassFilter, hltL1IsoLargeWindowSingleElectronTrackIsolFilter, hltL1NonIsoLargeWindowSingleElectronTrackIsolFilter, hltL1IsoLargeWindowDoubleElectronTrackIsolFilter, hltL1NonIsoLargeWindowDoubleElectronTrackIsolFilter, SingleMuIsoL3IsoFiltered, SingleMuNoIsoL3PreFiltered, DiMuonIsoL3IsoFiltered, DiMuonNoIsoL3PreFiltered, ZMML3Filtered, JpsiMML3Filtered, UpsilonMML3Filtered, multiMuonNoIsoL3PreFiltered, SameSignMuL3IsoFiltered, ExclDiMuonIsoL3IsoFiltered, SingleMuPrescale3L3PreFiltered, SingleMuPrescale5L3PreFiltered, SingleMuPrescale710L3PreFiltered, SingleMuPrescale77L3PreFiltered, DiMuonNoIsoL3PreFilteredRelaxedVtx2cm, DiMuonNoIsoL3PreFilteredRelaxedVtx2mm, SingleMuNoIsoL3PreFilteredRelaxedVtx2cm, SingleMuNoIsoL3PreFilteredRelaxedVtx2mm, SingleMuStartupL2PreFiltered, hlt1jet200, hlt1jet150, hlt1jet110, hlt1jet60, hlt1jet30, hlt2jet150, hlt3jet85, hlt4jet60, hlt1MET65, hlt1MET55, hlt1MET30, hlt1MET20, hlt2jetAco, hlt1jet180, hlt2jet125, hlt3jet60, hlt4jet35, hlt1jet1METAco, hlt2jetvbf, hltnv, hltPhi2metAco, hltPhiJet1metAco, hltPhiJet2metAco, hltPhiJet1Jet2Aco, hlt1SumET120, hlt1HT400, hlt1HT350, hltRapGap, hltdijetave110, hltdijetave150, hltdijetave200, hltdijetave30, hltdijetave60, filterL3SingleTau, filterL3SingleTauMET, filterL25PixelTau, hltBLifetimeL3filter, hltBSoftmuonL3filter, hltBSoftmuonByDRL3filter, displacedJpsitoMumuFilter, hltmmkFilter, hltMuonTauIsoL3IsoFiltered, hltFilterPixelTrackIsolatedTauJetsMuonTau, hltElectronTrackIsolFilterElectronTau, hltElectronTrackIsolFilterHOneOEMinusOneOPFilterElectronTau, hltFilterIsolatedTauJetsL3ElectronTau, hltFilterPixelTrackIsolatedTauJetsElectronTau, hltBSoftmuonL3filter, MuBIsoL3IsoFiltered, hltBLifetimeL3filter, MuBIsoL3IsoFiltered, hltBLifetimeL3filter, ElBElectronTrackIsolFilter, hltemuL1IsoSingleElectronTrackIsolFilter, hltemuNonIsoL1IsoTrackIsolFilter, EMuL3MuonIsoFilter, hltNonIsoEMuL3MuonPreFilter, MuJetsL3IsoFiltered, MuJetsHLT1jet40, MuNoL2IsoJetsL3IsoFiltered, MuNoL2IsoJetsHLT1jet40, MuNoIsoJetsL3PreFiltered, MuNoIsoJetsHLT1jet50, isolPixelTrackFilter}
+        }
 //
 // Put all these modules into a common endpath
 endpath HLTEndpath1 = {l1gtTrigReport & hltTrigReport}
@@ -22,7 +32,7 @@ endpath HLTEndpath1 = {l1gtTrigReport & hltTrigReport}
 // This to be put as a final path at the end of HLTpaths.cff:
 //
 // Construct new HLT-data-model summary objects
-module triggerSummaryAOD = triggerSummaryProducerAOD from "HLTrigger/HLTcore/data/triggerSummaryProducerAOD.cfi"
+//module triggerSummaryAOD = triggerSummaryProducerAOD from "HLTrigger/HLTcore/data/triggerSummaryProducerAOD.cfi"
 module triggerSummaryRAW = triggerSummaryProducerRAW from "HLTrigger/HLTcore/data/triggerSummaryProducerRAW.cfi"
 //
 // (RAW producer only for a subset of events!)
