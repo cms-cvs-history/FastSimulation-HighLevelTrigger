@@ -38,9 +38,9 @@ sequence doEcalAll = { ecalAllRecoSequence }
 // Muon = CSC and DT and RPC
 //
 include "RecoLocalMuon/Configuration/data/RecoLocalMuon.cff"
-sequence doLocalCSC     = { muonCSCDigis, csclocalreco }
-sequence doLocalDT      = { muonDTDigis, dtlocalreco }
-sequence doLocalRPC     = { muonRPCDigis, rpcRecHits }
+sequence doLocalCSC     = { simMuonCSCDigis, csclocalreco }
+sequence doLocalDT      = { simMuonDTDigis, dtlocalreco }
+sequence doLocalRPC     = { simMuonRPCDigis, rpcRecHits }
 // combined
 sequence doLocalMuon    = { doLocalDT & doLocalCSC & doLocalRPC}
 
