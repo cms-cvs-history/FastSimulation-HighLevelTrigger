@@ -1,31 +1,22 @@
-module ecalPreshowerRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
-replace ecalPreshowerRecHit.OutputRecHitCollections={"EcalRecHitsES"}
-replace ecalPreshowerRecHit.InputRecHitCollectionTypes={1}
-replace ecalPreshowerRecHit.InputRecHitCollections={caloRecHits:EcalRecHitsES}
+module hltEcalPreshowerRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
+replace hltEcalPreshowerRecHit.OutputRecHitCollections={"EcalRecHitsES"}
+replace hltEcalPreshowerRecHit.InputRecHitCollectionTypes={1}
+replace hltEcalPreshowerRecHit.InputRecHitCollections={caloRecHits:EcalRecHitsES}
 
-module ecalRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
+module hltEcalRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
 
-module hbhereco = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
-replace hbhereco.OutputRecHitCollections={"none"}
-replace hbhereco.InputRecHitCollectionTypes={4}
-replace hbhereco.InputRecHitCollections={caloRecHits}
+module hltHbhereco = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
+replace hltHbhereco.OutputRecHitCollections={"none"}
+replace hltHbhereco.InputRecHitCollectionTypes={4}
+replace hltHbhereco.InputRecHitCollections={caloRecHits}
 
-module horeco = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
-replace horeco.OutputRecHitCollections={"none"}
-replace horeco.InputRecHitCollectionTypes={5}
-replace horeco.InputRecHitCollections={caloRecHits}
+module hltHoreco = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
+replace hltHoreco.OutputRecHitCollections={"none"}
+replace hltHoreco.InputRecHitCollectionTypes={5}
+replace hltHoreco.InputRecHitCollections={caloRecHits}
 
-module hfreco = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
-replace hfreco.OutputRecHitCollections={"none"}
-replace hfreco.InputRecHitCollectionTypes={6}
-replace hfreco.InputRecHitCollections={caloRecHits}
+module hltHfreco = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
+replace hltHfreco.OutputRecHitCollections={"none"}
+replace hltHfreco.InputRecHitCollectionTypes={6}
+replace hltHfreco.InputRecHitCollections={caloRecHits}
 
-sequence ecalLocalRecoSequence = { 
-    ecalRecHit & 
-    ecalPreshowerRecHit 
-}
-sequence ecalLocalRecoSequence_nopreshower = { 
-    ecalRecHit 
-}
-
-sequence  hcalLocalRecoSequence = { hbhereco & hfreco & horeco }

@@ -1,7 +1,6 @@
 include "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+include "FastSimulation/Tracking/data/PixelTripletSeedProducer.cff"
 
-sequence pixeltrackerlocalreco = {dummyModule}
+sequence pixeltrackerlocalreco = {dummyModule & pixelTripletGSSeeds }
 
 sequence striptrackerlocalreco = {dummyModule}
-
-sequence trackerlocalreco =  {dummyModule}

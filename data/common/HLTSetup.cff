@@ -2,47 +2,68 @@
 // Running the HLT table directly from Fast Simulation 
 //
 
+#--- Dummy replacements of HLT modules ---#
+module hltEcalPreshowerDigis = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalJetsFEDs = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalJetsDigis = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalJetsWeightUncalibRecHit = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalJetsRecHitTmp = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalMuonsFEDs = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalMuonsDigis = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalMuonsWeightUncalibRecHit = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalMuonsRecHitTmp = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalEgammaFEDs = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalEgammaDigis = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalEgammaWeightUncalibRecHit = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalEgammaRecHitTmp = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalTausFEDs = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalTausDigis = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalTausWeightUncalibRecHit = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalTausRecHitTmp = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltL3TrajectorySeed = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalDigis = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalWeightUncalibRecHit = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltHcalDigis = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalRestFEDs = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalRestDigis = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalRestWeightUncalibRecHit = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegionalRestRecHitTmp = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltL3SingleTauPixelSeeds = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltL3SingleTauPixelSeedsRelaxed = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltL3SingleTauMETPixelSeeds = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltL3SingleTauMETPixelSeedsRelaxed = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltBLifetimeRegionalPixelSeedGenerator = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltBLifetimeRegionalPixelSeedGeneratorRelaxed = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltMumuPixelSeedFromL2Candidate = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltMumukPixelSeedFromL2Candidate = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+# module  = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+# module  = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+# module  = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+# module  = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+# module  = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+
+
 //
 // Tracker = Pixel and Strip
 //
-#include "RecoLocalTracker/Configuration/data/RecoLocalTracker.cff"
 include "FastSimulation/HighLevelTrigger/data/common/RecoLocalTracker.cff"
-sequence doLocalPixel   = { pixeltrackerlocalreco }
-sequence doLocalStrip   = { striptrackerlocalreco }
-// combined
-sequence doLocalTracker = { doLocalPixel & doLocalStrip }
+sequence HLTDoLocalPixelSequence   = { pixeltrackerlocalreco }
+sequence HLTDoLocalStripSequence   = { striptrackerlocalreco }
 
 //
 // Calorimeter = Ecal and Hcal
 //
-#include "RecoLocalCalo/Configuration/data/RecoLocalCalo.cff"
 include "FastSimulation/HighLevelTrigger/data/common/RecoLocalCalo.cff"
-sequence hcalLocalRecoWithoutHO = {hbhereco & hfreco}
 //
-sequence doLocalEcal_nopreshower  = { ecalLocalRecoSequence_nopreshower }
-sequence doLocalEcal          = { ecalLocalRecoSequence }
-sequence doLocalHcal          = { hcalLocalRecoSequence }
-sequence doLocalHcalWithoutHO = { hcalLocalRecoWithoutHO }
-// combined
-sequence doLocalCalo          = { doLocalEcal & doLocalHcal }
-sequence doLocalCaloWithoutHO = {doLocalEcal & doLocalHcalWithoutHO }
 
-#include "HLTrigger/Configuration/data/common/EcalRegionalRecoFromDigis.cff"
 include "FastSimulation/HighLevelTrigger/data/common/EcalRegionalReco.cff"
-sequence doRegionalEgammaEcal = { ecalRegionalEgammaRecoSequence }
-sequence doRegionalMuonsEcal  = { ecalRegionalMuonsRecoSequence }
-sequence doRegionalTausEcal   = { ecalRegionalTausRecoSequence }
-sequence doRegionalJetsEcal = {  ecalRegionalJetsRecoSequence }
-sequence doEcalAll = { ecalAllRecoSequence }
 //
 // Muon = CSC and DT and RPC
 //
-include "RecoLocalMuon/Configuration/data/RecoLocalMuon.cff"
-sequence doLocalCSC     = { muonCSCDigis, csclocalreco }
-sequence doLocalDT      = { muonDTDigis, dtlocalreco }
-sequence doLocalRPC     = { muonRPCDigis, rpcRecHits }
-// combined
-sequence doLocalMuon    = { doLocalDT & doLocalCSC & doLocalRPC}
+replace hltCsc2DRecHits.CSCStripDigiProducer = "muonCSCDigis"
+replace hltCsc2DRecHits.CSCWireDigiProducer = "muonCSCDigis"
+replace hltDt1DRecHits.dtDigiLabel = muonDTDigis
+replace hltRpcRecHits.rpcDigiLabel = muonRPCDigis
 
 // Specific reconstruction sequences for FastSimulation
 include "FastSimulation/HighLevelTrigger/data/common/HLTFastReco.cff"
@@ -51,3 +72,5 @@ include "FastSimulation/HighLevelTrigger/data/common/HLTFastReco.cff"
 // Epilogue with endpath of modules for HLT:
 include "FastSimulation/HighLevelTrigger/data/common/HLTEndpath.cff"
 //
+
+

@@ -13,12 +13,18 @@ module hltBLifetimeRegionalCtfWithMaterialTracks = FastTrackMerger {
 
 }
 
-# Define regional reconstruction path.
-sequence hltBLifetimeRegionalTracks = {
-    globalPixelGSTracking, 
-    hltBLifetimeRegionalCtfWithMaterialTracks
+module hltBLifetimeRegionalCtfWithMaterialTracksRelaxed = FastTrackMerger {
+
+    VInputTag TrackProducers = { 
+	globalPixelGSWithMaterialTracks
+    }
+
+    untracked bool SaveTracksOnly = true
+    untracked double ptMin = 1.0
+    untracked uint32 minHits = 8
+
 }
 
-sequence hltBLifetimeL3tracking = {hltBLifetimeRegionalTracks } 
-
+sequence hltBLifetimeRegionalCkfTrackCandidates = { globalPixelGSTracking }
+sequence hltBLifetimeRegionalCkfTrackCandidatesRelaxed = { globalPixelGSTracking }
 

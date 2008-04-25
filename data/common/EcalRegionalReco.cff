@@ -14,41 +14,14 @@
 //   with updated InputTags
 //
 
-module  ecalRegionalEgammaRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
+module  hltEcalRegionalEgammaRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
 
-module  ecalRegionalMuonsRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
+module  hltEcalRegionalMuonsRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
 
-module  ecalRegionalTausRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
+module  hltEcalRegionalTausRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
 
-module  ecalRegionalJetsRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
+module  hltEcalRegionalJetsRecHit = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
 
-module  ecalRecHitAll = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
+module  hltEcalRecHitAll = caloRecHitCopy from "FastSimulation/CaloRecHitsProducer/data/CaloRecHitCopy.cfi"
 
-//
-// sequence definition
-//
-sequence ecalRegionalEgammaRecoSequence = { 
-    ecalRegionalEgammaRecHit &
-    ecalPreshowerRecHit
-}
-
-sequence ecalRegionalMuonsRecoSequence = { 
-    ecalRegionalMuonsRecHit &
-    ecalPreshowerRecHit
-}
-
-sequence ecalRegionalTausRecoSequence = {
-    ecalRegionalTausRecHit &
-    ecalPreshowerRecHit 
-}
-
-sequence ecalRegionalJetsRecoSequence = {
-    ecalRegionalJetsRecHit &
-    ecalPreshowerRecHit 
-}
-
-sequence ecalAllRecoSequence = {
-    ecalRecHitAll &
-    ecalPreshowerRecHit 
-}
 

@@ -1,40 +1,9 @@
-# Specific l1extraParticles for muons (temporary).
-replace DiMuonIsoLevel1Seed.L1MuonCollectionTag = l1ParamMuons
-replace DiMuonNoIsoLevel1Seed.L1MuonCollectionTag = l1ParamMuons
-replace JpsiMMLevel1Seed.L1MuonCollectionTag = l1ParamMuons
-replace multiMuonNoIsoLevel1Seed.L1MuonCollectionTag = l1ParamMuons
-replace SameSignMuLevel1Seed.L1MuonCollectionTag = l1ParamMuons
-replace MuLevel1PathLevel1Seed.L1MuonCollectionTag = l1ParamMuons
-replace SingleMuIsoLevel1Seed.L1MuonCollectionTag = l1ParamMuons
-replace SingleMuNoIsoLevel1Seed.L1MuonCollectionTag = l1ParamMuons
-replace SingleMuPrescale3Level1Seed.L1MuonCollectionTag = l1ParamMuons
-replace SingleMuPrescale5Level1Seed.L1MuonCollectionTag = l1ParamMuons
-replace SingleMuPrescale710Level1Seed.L1MuonCollectionTag = l1ParamMuons
-replace SingleMuPrescale77Level1Seed.L1MuonCollectionTag = l1ParamMuons
-replace UpsilonMMLevel1Seed.L1MuonCollectionTag = l1ParamMuons
-replace ZMMLevel1Seed.L1MuonCollectionTag = l1ParamMuons
-
-replace DiMuonIsoLevel1Seed.L1GtObjectMapTag = gtDigis
-replace DiMuonNoIsoLevel1Seed.L1GtObjectMapTag = gtDigis
-replace JpsiMMLevel1Seed.L1GtObjectMapTag = gtDigis
-replace multiMuonNoIsoLevel1Seed.L1GtObjectMapTag = gtDigis
-replace SameSignMuLevel1Seed.L1GtObjectMapTag = gtDigis
-replace MuLevel1PathLevel1Seed.L1GtObjectMapTag = gtDigis
-replace SingleMuIsoLevel1Seed.L1GtObjectMapTag = gtDigis
-replace SingleMuNoIsoLevel1Seed.L1GtObjectMapTag = gtDigis
-replace SingleMuPrescale3Level1Seed.L1GtObjectMapTag = gtDigis
-replace SingleMuPrescale5Level1Seed.L1GtObjectMapTag = gtDigis
-replace SingleMuPrescale710Level1Seed.L1GtObjectMapTag = gtDigis
-replace SingleMuPrescale77Level1Seed.L1GtObjectMapTag = gtDigis
-replace UpsilonMMLevel1Seed.L1GtObjectMapTag = gtDigis
-replace ZMMLevel1Seed.L1GtObjectMapTag = gtDigis
-
 ### RecoMuon flux ##########################################################
 
 ## L2 seeds from L1 input
-module hltL2MuonSeeds = L2MuonSeeds from "RecoMuon/L2MuonSeedGenerator/data/L2MuonSeeds.cfi"
-replace hltL2MuonSeeds.GMTReadoutCollection = l1ParamMuons
-replace hltL2MuonSeeds.InputObjects = l1ParamMuons
+# module hltL2MuonSeeds = L2MuonSeeds from "RecoMuon/L2MuonSeedGenerator/data/L2MuonSeeds.cfi"
+# replace hltL2MuonSeeds.GMTReadoutCollection = l1ParamMuons
+# replace hltL2MuonSeeds.InputObjects = l1ParamMuons
 
 ## L3 regional reconstruction
 include "FastSimulation/Tracking/data/GlobalPixelTracking.cff"
@@ -44,14 +13,7 @@ replace hltL3Muons.MuonCollectionLabel = hltL2Muons:UpdatedAtVtx
 replace hltL3Muons.L3TrajBuilderParameters.TrackerTrajectories = globalPixelGSWithMaterialTracks
 replace hltL3Muons.L3TrajBuilderParameters.StateOnTrackerBoundOutPropagator = "SmartPropagator"
 
-sequence hltL3MuonTracks = { 
-    globalPixelGSTracking,  // Pixel-pair-seeded tracks
-    hltL3Muons 
-}
-
-## Pixel tracking for muon isolation
-include "FastSimulation/HighLevelTrigger/data/common/Vertexing.cff"
-
-sequence pixelTracksForMuons = { 
-    pixelGSTracking       // Pixel-triplet tracks
+# FastSim sequence to replace HLT module
+sequence hltL3TrackCandidateFromL2 = { 
+    globalPixelGSTracking  // Pixel-pair-seeded tracks
 }
