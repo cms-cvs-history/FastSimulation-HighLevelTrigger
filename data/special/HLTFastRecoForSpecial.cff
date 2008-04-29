@@ -56,7 +56,7 @@ sequence pixelTrackingForMinBias = {
 include "FastSimulation/Tracking/data/PixelTracksProducer.cfi"
 
 sequence pixelTrackingForIsol = {
-    pixelGSTracking
+    pixelTracking
 }
 
 module filterTriggerType = hltBool from "HLTrigger/HLTfilters/data/hltBool.cfi"

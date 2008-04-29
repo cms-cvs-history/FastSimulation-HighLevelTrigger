@@ -4,7 +4,7 @@ include "FastSimulation/Tracking/data/GlobalPixelTracking.cff"
 module hltCtfWithMaterialTracksMumuk = FastTrackMerger {
 
     VInputTag TrackProducers = { 
-	globalPixelGSWithMaterialTracks
+	globalPixelWithMaterialTracks
     }
 
     untracked bool SaveTracksOnly = true

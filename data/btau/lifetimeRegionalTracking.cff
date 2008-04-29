@@ -4,7 +4,7 @@ include "FastSimulation/Tracking/data/GlobalPixelTracking.cff"
 module hltBLifetimeRegionalCtfWithMaterialTracks = FastTrackMerger {
 
     VInputTag TrackProducers = { 
-	globalPixelGSWithMaterialTracks
+	globalPixelWithMaterialTracks
     }
 
     untracked bool SaveTracksOnly = true
@@ -15,7 +15,7 @@ module hltBLifetimeRegionalCtfWithMaterialTracks = FastTrackMerger {
 
 # Define regional reconstruction path.
 sequence hltBLifetimeRegionalTracks = {
-    globalPixelGSTracking, 
+    globalPixelTracking, 
     hltBLifetimeRegionalCtfWithMaterialTracks
 }
 

@@ -15,7 +15,7 @@ include "FastSimulation/Tracking/data/GlobalPixelTracking.cff"
 # L2.5 pixel-seeded tracks for SingleTau(MET) collections (pT>5GeV/c)
 module ctfWithMaterialTracksL25SingleTau = FastTrackMerger {
     VInputTag TrackProducers = {
-        globalPixelGSWithMaterialTracks
+        globalPixelWithMaterialTracks
     }
     untracked bool SaveTracksOnly = true
     untracked double ptMin = 5.0
@@ -23,7 +23,7 @@ module ctfWithMaterialTracksL25SingleTau = FastTrackMerger {
 
 module ctfWithMaterialTracksL25SingleTauMET = FastTrackMerger {
     VInputTag TrackProducers = {
-        globalPixelGSWithMaterialTracks
+        globalPixelWithMaterialTracks
     }
     untracked bool SaveTracksOnly = true
     untracked double ptMin = 5.0
@@ -31,7 +31,7 @@ module ctfWithMaterialTracksL25SingleTauMET = FastTrackMerger {
 
 module hltCtfWithMaterialTracksL25ElectronTau = FastTrackMerger {
     VInputTag TrackProducers = {
-        globalPixelGSWithMaterialTracks
+        globalPixelWithMaterialTracks
     }
     untracked bool SaveTracksOnly = true
     untracked double ptMin = 5.0
@@ -40,7 +40,7 @@ module hltCtfWithMaterialTracksL25ElectronTau = FastTrackMerger {
 # L3 pixel-seeded tracks for Single Tau Collection (pT>1GeV/c)
 module ctfWithMaterialTracksL3SingleTau = FastTrackMerger {
     VInputTag TrackProducers = {
-        globalPixelGSWithMaterialTracks
+        globalPixelWithMaterialTracks
     }
     untracked bool SaveTracksOnly = true
     untracked double ptMin = 1.0
@@ -48,7 +48,7 @@ module ctfWithMaterialTracksL3SingleTau = FastTrackMerger {
 
 module ctfWithMaterialTracksL3SingleTauMET = FastTrackMerger {
     VInputTag TrackProducers = {
-        globalPixelGSWithMaterialTracks
+        globalPixelWithMaterialTracks
     }
     untracked bool SaveTracksOnly = true
     untracked double ptMin = 1.0
@@ -56,22 +56,22 @@ module ctfWithMaterialTracksL3SingleTauMET = FastTrackMerger {
 
 module hltCtfWithMaterialTracksL3ElectronTau = FastTrackMerger {
     VInputTag TrackProducers = {
-        globalPixelGSWithMaterialTracks
+        globalPixelWithMaterialTracks
     }
     untracked bool SaveTracksOnly = true
     untracked double ptMin = 1.0
 }
 
 #L25Trk reconstruction
-sequence ckfTracksL25SingleTau = {globalPixelGSTracking & ctfWithMaterialTracksL25SingleTau}
+sequence ckfTracksL25SingleTau = {globalPixelTracking & ctfWithMaterialTracksL25SingleTau}
 
-sequence ckfTracksL25SingleTauMET = { globalPixelGSTracking & ctfWithMaterialTracksL25SingleTauMET }
+sequence ckfTracksL25SingleTauMET = { globalPixelTracking & ctfWithMaterialTracksL25SingleTauMET }
 
-sequence hltTracksL25ElectronTau = { globalPixelGSTracking, hltCtfWithMaterialTracksL25ElectronTau }
+sequence hltTracksL25ElectronTau = { globalPixelTracking, hltCtfWithMaterialTracksL25ElectronTau }
 
 #L3Trk reconstruction
-sequence ckfTracksL3SingleTau = {globalPixelGSTracking, ctfWithMaterialTracksL3SingleTau}
+sequence ckfTracksL3SingleTau = {globalPixelTracking, ctfWithMaterialTracksL3SingleTau}
 
-sequence ckfTracksL3SingleTauMET = { globalPixelGSTracking & ctfWithMaterialTracksL3SingleTauMET }
+sequence ckfTracksL3SingleTauMET = { globalPixelTracking & ctfWithMaterialTracksL3SingleTauMET }
 
-sequence hltTracksL3ElectronTau = { globalPixelGSTracking & hltCtfWithMaterialTracksL3ElectronTau }
+sequence hltTracksL3ElectronTau = { globalPixelTracking & hltCtfWithMaterialTracksL3ElectronTau }
