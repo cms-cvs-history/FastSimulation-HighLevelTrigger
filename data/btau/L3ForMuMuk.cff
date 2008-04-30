@@ -19,18 +19,18 @@ module hltMumukAllConeTracks = ConcreteChargedCandidateProducer {
   string particleType = "mu-"
 }
 
-sequence hltMumukTracking = { 
-    l3muonreco & 
-    hltCtfWithMaterialTracksMumuk
-}
+sequence hltCkfTrackCandidatesMumuk = { HLTL3muonrecoSequence }
 
-sequence hltMumukCandidates = {
-    hltMumukAllConeTracks
-}
+# sequence FastSimHLTMumukTracking = { 
+#     HLTL3muonrecoSequence & 
+#     hltCtfWithMaterialTracksMumuk
+# }
 
-sequence l3MumukReco = {
-    (doLocalPixel & doLocalStrip) 
-    & recopixelvertexing 
-    & hltMumukTracking 
-    & hltMumukCandidates
-}
+# sequence hltMumukCandidates = {
+#     hltMumukAllConeTracks
+# }
+
+# sequence FastSimL3MumukReco = {
+#     FastSimHLTMumukTracking &
+#     hltMumukAllConeTracks
+# }

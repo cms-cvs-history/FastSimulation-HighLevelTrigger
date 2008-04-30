@@ -1,32 +1,3 @@
-# Specific l1extraParticles for muons (temporary).
-replace l1sEcalPhiSym.L1MuonCollectionTag = l1ParamMuons
-replace l1sHcalPhiSym.L1MuonCollectionTag = l1ParamMuons
-replace l1sEcalPi0.L1MuonCollectionTag = l1ParamMuons
-replace l1seedMinBiasPixel.L1MuonCollectionTag = l1ParamMuons
-replace hltl1sMin.L1MuonCollectionTag = l1ParamMuons
-replace hltl1sZero.L1MuonCollectionTag = l1ParamMuons
-replace l1sIsolTrack.L1MuonCollectionTag = l1ParamMuons
-replace level1seedHLTBackwardBSC.L1MuonCollectionTag = l1ParamMuons
-replace level1seedHLTForwardBSC.L1MuonCollectionTag = l1ParamMuons
-replace level1seedHLTCSCBeamHalo.L1MuonCollectionTag = l1ParamMuons
-replace level1seedHLTCSCBeamHaloOverlapRing1.L1MuonCollectionTag = l1ParamMuons
-replace level1seedHLTCSCBeamHaloOverlapRing2.L1MuonCollectionTag = l1ParamMuons
-replace level1seedHLTCSCBeamHaloRing2or3.L1MuonCollectionTag = l1ParamMuons
-
-replace l1sEcalPhiSym.L1GtObjectMapTag = gtDigis
-replace l1sHcalPhiSym.L1GtObjectMapTag = gtDigis
-replace l1sEcalPi0.L1GtObjectMapTag = gtDigis
-replace l1seedMinBiasPixel.L1GtObjectMapTag = gtDigis
-replace hltl1sMin.L1GtObjectMapTag = gtDigis
-replace hltl1sZero.L1GtObjectMapTag = gtDigis
-replace l1sIsolTrack.L1GtObjectMapTag = gtDigis
-replace level1seedHLTBackwardBSC.L1GtObjectMapTag = gtDigis
-replace level1seedHLTForwardBSC.L1GtObjectMapTag = gtDigis
-replace level1seedHLTCSCBeamHalo.L1GtObjectMapTag = gtDigis
-replace level1seedHLTCSCBeamHaloOverlapRing1.L1GtObjectMapTag = gtDigis
-replace level1seedHLTCSCBeamHaloOverlapRing2.L1GtObjectMapTag = gtDigis
-replace level1seedHLTCSCBeamHaloRing2or3.L1GtObjectMapTag = gtDigis
-
 # Pixel track find for minbias
 #   very low pt threshold. Even if only high-pt tracks
 #   are selected, the low-Pt might be wanted to check 
@@ -45,18 +16,19 @@ replace pixelTripletSeedsForMinBias.seedingAlgo      = {"PixelTriplet"}
 replace pixelTripletSeedsForMinBias.originpTMin = {0.2}    
 replace pixelTripletSeedsForMinBias.pTMin = {0.2}    
 
-module pixelTracksForMinBias = pixelTracks from "FastSimulation/Tracking/data/PixelTracksProducer.cfi"
-replace pixelTracksForMinBias.SeedProducer = pixelTripletSeedsForMinBias:PixelTriplet
+module hltPixelTracksForMinBias = hltPixelTracks from "FastSimulation/Tracking/data/HLTPixelTracksProducer.cfi"
+replace hltPixelTracksForMinBias.SeedProducer = pixelTripletSeedsForMinBias:PixelTriplet
 
-sequence pixelTrackingForMinBias = { 
+sequence HLTPixelTrackingForMinBiasSequence = { 
     pixelTripletSeedsForMinBias,
-    pixelTracksForMinBias
+    hltPixelTracksForMinBias
 }
 
 include "FastSimulation/Tracking/data/PixelTracksProducer.cfi"
 
-sequence pixelTrackingForIsol = {
-    pixelTracking
-}
+module hltFilterTriggerType = hltBool from "HLTrigger/HLTfilters/data/hltBool.cfi"
 
-module filterTriggerType = hltBool from "HLTrigger/HLTfilters/data/hltBool.cfi"
+#--- Changes needed for HLT.cff with 1E32 menu ---#
+# replace hltL1sHcalPhiSym.L1SeedsLogicalExpression = "L1_ZeroBias"
+# replace hltL1sEcalPhiSym.L1SeedsLogicalExpression = "L1_ZeroBias"
+

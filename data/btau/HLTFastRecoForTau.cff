@@ -1,34 +1,9 @@
-# Specific l1extraParticles for muons (temporary).
-replace doubleTauL1SeedFilter.L1MuonCollectionTag = l1ParamMuons
-replace singleTauL1SeedFilter.L1MuonCollectionTag = l1ParamMuons
-replace singleTauMETL1SeedFilter.L1MuonCollectionTag = l1ParamMuons
-
-replace doubleTauL1SeedFilter.L1GtObjectMapTag = gtDigis
-replace singleTauL1SeedFilter.L1GtObjectMapTag = gtDigis
-replace singleTauMETL1SeedFilter.L1GtObjectMapTag = gtDigis
-
 #Primary Vertex
 include "FastSimulation/Tracking/data/PixelVerticesProducer.cff"
 
 # (Not-so) Regional Tracking
 include "FastSimulation/Tracking/data/GlobalPixelTracking.cff"
 # L2.5 pixel-seeded tracks for SingleTau(MET) collections (pT>5GeV/c)
-module ctfWithMaterialTracksL25SingleTau = FastTrackMerger {
-    VInputTag TrackProducers = {
-        globalPixelWithMaterialTracks
-    }
-    untracked bool SaveTracksOnly = true
-    untracked double ptMin = 5.0
-}
-
-module ctfWithMaterialTracksL25SingleTauMET = FastTrackMerger {
-    VInputTag TrackProducers = {
-        globalPixelWithMaterialTracks
-    }
-    untracked bool SaveTracksOnly = true
-    untracked double ptMin = 5.0
-}
-
 module hltCtfWithMaterialTracksL25ElectronTau = FastTrackMerger {
     VInputTag TrackProducers = {
         globalPixelWithMaterialTracks
@@ -38,7 +13,7 @@ module hltCtfWithMaterialTracksL25ElectronTau = FastTrackMerger {
 }
 
 # L3 pixel-seeded tracks for Single Tau Collection (pT>1GeV/c)
-module ctfWithMaterialTracksL3SingleTau = FastTrackMerger {
+module hltCtfWithMaterialTracksL3SingleTau = FastTrackMerger {
     VInputTag TrackProducers = {
         globalPixelWithMaterialTracks
     }
@@ -46,7 +21,23 @@ module ctfWithMaterialTracksL3SingleTau = FastTrackMerger {
     untracked double ptMin = 1.0
 }
 
-module ctfWithMaterialTracksL3SingleTauMET = FastTrackMerger {
+module hltCtfWithMaterialTracksL3SingleTauRelaxed = FastTrackMerger {
+    VInputTag TrackProducers = {
+        globalPixelWithMaterialTracks
+    }
+    untracked bool SaveTracksOnly = true
+    untracked double ptMin = 1.0
+}
+
+module hltCtfWithMaterialTracksL3SingleTauMET = FastTrackMerger {
+    VInputTag TrackProducers = {
+        globalPixelWithMaterialTracks
+    }
+    untracked bool SaveTracksOnly = true
+    untracked double ptMin = 1.0
+}
+
+module hltCtfWithMaterialTracksL3SingleTauMETRelaxed = FastTrackMerger {
     VInputTag TrackProducers = {
         globalPixelWithMaterialTracks
     }
@@ -62,16 +53,9 @@ module hltCtfWithMaterialTracksL3ElectronTau = FastTrackMerger {
     untracked double ptMin = 1.0
 }
 
-#L25Trk reconstruction
-sequence ckfTracksL25SingleTau = {globalPixelTracking & ctfWithMaterialTracksL25SingleTau}
+#--- Fastsim sequences replacing modules in tau paths ---#
+sequence hltCkfTrackCandidatesL3SingleTau = { globalPixelTracking }
+sequence hltCkfTrackCandidatesL3SingleTauRelaxed = { globalPixelTracking }
+sequence hltCkfTrackCandidatesL3SingleTauMET = { globalPixelTracking }
+sequence hltCkfTrackCandidatesL3SingleTauMETRelaxed = { globalPixelTracking }
 
-sequence ckfTracksL25SingleTauMET = { globalPixelTracking & ctfWithMaterialTracksL25SingleTauMET }
-
-sequence hltTracksL25ElectronTau = { globalPixelTracking, hltCtfWithMaterialTracksL25ElectronTau }
-
-#L3Trk reconstruction
-sequence ckfTracksL3SingleTau = {globalPixelTracking, ctfWithMaterialTracksL3SingleTau}
-
-sequence ckfTracksL3SingleTauMET = { globalPixelTracking & ctfWithMaterialTracksL3SingleTauMET }
-
-sequence hltTracksL3ElectronTau = { globalPixelTracking & hltCtfWithMaterialTracksL3ElectronTau }

@@ -13,7 +13,7 @@ module hltCtfWithMaterialTracksMumu = FastTrackMerger {
 
 }
 
-sequence Mumutracks = { l3muonreco & hltCtfWithMaterialTracksMumu }
+sequence hltCkfTrackCandidatesMumu = { HLTL3muonrecoNocandSequence }
 
 # produce ChargedCandidates from tracks
 module hltMuTracks = ConcreteChargedCandidateProducer {
@@ -21,6 +21,4 @@ module hltMuTracks = ConcreteChargedCandidateProducer {
   string particleType = "mu-"
 }
 
-sequence Mumucand = { hltMuTracks }
-
-sequence l3displacedMumureco = {(doLocalPixel & doLocalStrip) & recopixelvertexing & Mumutracks & Mumucand }
+# sequence Mumucand = { hltMuTracks }
