@@ -74,8 +74,8 @@ replace fastL1CaloSim.AlgorithmSource = "RecHits"
 replace fastL1CaloSim.EmInputs = { "caloRecHits:EcalRecHitsEB", "caloRecHits:EcalRecHitsEE"  }	
 sequence famosWithL1 = { 
     famosWithCaloTowers& 
-    ecalTriggerPrimitiveDigis& 
-    hcalTriggerPrimitiveDigis& 
+    simEcalTriggerPrimitiveDigis& 
+    simHcalTriggerPrimitiveDigis& 
     fastL1CaloSim& 
     fastL1extraParticleMap 
 } 

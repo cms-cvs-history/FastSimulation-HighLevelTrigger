@@ -54,16 +54,7 @@ sequence HLTDoLocalStripSequence   = { striptrackerlocalreco }
 // Calorimeter = Ecal and Hcal
 //
 include "FastSimulation/HighLevelTrigger/data/common/RecoLocalCalo.cff"
-//
-
 include "FastSimulation/HighLevelTrigger/data/common/EcalRegionalReco.cff"
-//
-// Muon = CSC and DT and RPC
-//
-replace hltCsc2DRecHits.CSCStripDigiProducer = "muonCSCDigis"
-replace hltCsc2DRecHits.CSCWireDigiProducer = "muonCSCDigis"
-replace hltDt1DRecHits.dtDigiLabel = muonDTDigis
-replace hltRpcRecHits.rpcDigiLabel = muonRPCDigis
 
 // Specific reconstruction sequences for FastSimulation
 include "FastSimulation/HighLevelTrigger/data/common/HLTFastReco.cff"
