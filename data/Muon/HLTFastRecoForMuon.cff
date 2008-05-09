@@ -11,7 +11,7 @@ include "FastSimulation/Muons/data/L3Muons.cff"
 module hltL3Muons = L3Muons from "FastSimulation/Muons/data/L3Muons.cfi"
 replace hltL3Muons.MuonCollectionLabel = hltL2Muons:UpdatedAtVtx
 replace hltL3Muons.L3TrajBuilderParameters.TrackerTrajectories = globalPixelWithMaterialTracks
-replace hltL3Muons.L3TrajBuilderParameters.StateOnTrackerBoundOutPropagator = "SmartPropagator"
+replace hltL3Muons.L3TrajBuilderParameters.OutPropagator = "SmartPropagator"
 
 # FastSim sequence to replace HLT module
 sequence hltL3TrackCandidateFromL2 = { 
