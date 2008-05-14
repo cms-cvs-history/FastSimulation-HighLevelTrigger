@@ -20,7 +20,6 @@ module hltEcalRegionalTausFEDs = dummyModule from "FastSimulation/HighLevelTrigg
 module hltEcalRegionalTausDigis = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
 module hltEcalRegionalTausWeightUncalibRecHit = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
 module hltEcalRegionalTausRecHitTmp = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
-module hltL3TrajectorySeed = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
 module hltEcalDigis = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
 module hltEcalWeightUncalibRecHit = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
 module hltHcalDigis = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
