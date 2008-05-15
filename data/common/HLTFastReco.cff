@@ -42,6 +42,7 @@ include "FastSimulation/Muons/data/L1Muons.cfi"
 # GT emulator
 # the replace of the DaqActiveBoard allows the GT to run without muon inputs (no longer needed)
 replace gtDigis.GmtInputTag = l1ParamMuons
+replace gtDigis.EmulateBxInEvent = 1 
 
 # L1Extra - provides 4-vector representation of L1 trigger objects - not needed by HLT
 # The muon extra particles are done by L1ParamMuons, but could be done here too.
