@@ -8,16 +8,10 @@
 ## L3 regional reconstruction
 include "FastSimulation/Muons/data/L3Muons.cff"
 module hltL3Muons = L3Muons from "FastSimulation/Muons/data/L3Muons.cfi"
-replace hltL3Muons.L3TrajBuilderParameters.TrackerTrajectories = hltL3TkMuons
-replace hltL3Muons.L3TrajBuilderParameters.OutPropagator = "SmartPropagator"
 
 ## L3 regional seeding, candidating, tracking
 include "FastSimulation/Muons/data/TSGFromL2.cfi"
 include "FastSimulation/Muons/data/TrackCandidateFromL2.cfi"
-replace hltL3TkMuons.TTRHBuilder = "WithoutRefit"
-replace hltL3TkMuons.Propagator = "PropagatorWithMaterial"
-replace hltL3TkMuons.Fitter = "KFFittingSmoother"
-replace hltL3TkMuons.src = hltL3CandidateFromL2
-replace hltL3TkMuons.TrajectoryInEvent = true
+include "FastSimulation/Muons/data/HLTL3TkMuons.cfi"
 
 sequence hltL3TrackCandidateFromL2 = { hltL3CandidateFromL2 & hltL3TkMuons }
