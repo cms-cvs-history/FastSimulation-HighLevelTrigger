@@ -32,6 +32,8 @@ replace paramMuons.MUONS.ProduceL3Muons = false
 
 # L1 emulator 
 include "L1Trigger/Configuration/data/L1Emulator.cff"
+replace rctDigis.ecalDigisLabel = simEcalTriggerPrimitiveDigis
+replace rctDigis.hcalDigisLabel = simHcalTriggerPrimitiveDigis
 
 # The calorimeter emulator requires doDigis=true)
 replace caloRecHits.RecHitsFactory.doDigis = true
@@ -58,7 +60,7 @@ replace l1gtTrigReport.PrintOutput = 2
 sequence HLTBeginSequence = { 
     simulation &
     simEcalTriggerPrimitiveDigis& 
-    simEcalTriggerPrimitiveDigis& 
+    simHcalTriggerPrimitiveDigis& 
     L1CaloEmulator&
     l1ParamMuons&
     gtDigis&
