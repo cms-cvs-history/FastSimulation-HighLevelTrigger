@@ -32,3 +32,11 @@ module hltFilterTriggerType = hltBool from "HLTrigger/HLTfilters/data/hltBool.cf
 # replace hltL1sHcalPhiSym.L1SeedsLogicalExpression = "L1_ZeroBias"
 # replace hltL1sEcalPhiSym.L1SeedsLogicalExpression = "L1_ZeroBias"
 
+# Raw data don;t exist in fast simulation -> dummy sequence for now
+
+include "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+#sequence HLTIsoTrRegFEDSelection = { dummyModule }
+
+module hltSiStripRegFED = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltEcalRegFED = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
+module hltSubdetFED = dummyModule from "FastSimulation/HighLevelTrigger/data/DummyModule.cfi"
