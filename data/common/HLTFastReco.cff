@@ -53,8 +53,14 @@ include "L1Trigger/Configuration/data/L1Extra.cff"
 replace l1extraParticles.muonSource = l1ParamMuons
 
 # L1 report
-replace l1gtTrigReport.PrintVerbosity = 1
-replace l1gtTrigReport.PrintOutput = 2
+module hltL1gtTrigReport = l1GtTrigReport from "L1Trigger/GlobalTriggerAnalyzer/data/l1GtTrigReport.cfi"
+replace hltL1gtTrigReport.PrintVerbosity = 1
+replace hltL1gtTrigReport.PrintOutput = 2
+
+# HLT Report
+untracked PSet options = {
+    untracked bool wantSummary = true # default is false
+}
 
 # The hltbegin sequence (with L1 emulator)
 sequence HLTBeginSequence = { 

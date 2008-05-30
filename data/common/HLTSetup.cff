@@ -58,9 +58,4 @@ include "FastSimulation/HighLevelTrigger/data/common/EcalRegionalReco.cff"
 // Specific reconstruction sequences for FastSimulation
 include "FastSimulation/HighLevelTrigger/data/common/HLTFastReco.cff"
 
-//
-// Epilogue with endpath of modules for HLT:
-include "FastSimulation/HighLevelTrigger/data/common/HLTEndpath.cff"
-//
-
 
