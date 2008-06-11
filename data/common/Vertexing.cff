@@ -1,7 +1,0 @@
-//
-// Sequences for Vertex reconstruction
-//
-
-include "FastSimulation/Tracking/data/PixelVerticesProducer.cff"
-
-// ??
