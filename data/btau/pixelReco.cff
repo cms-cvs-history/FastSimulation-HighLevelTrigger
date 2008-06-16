@@ -1,5 +1,0 @@
-# Reconstruct pixel tracks and vertices from Digis
- 
-# Pixel primary vertices and tracks (used at L2.5 and L3)
-include "FastSimulation/Tracking/data/PixelVerticesProducer.cff"
-sequence hltBLifetimeL25tracking = { recopixelvertexing }
