@@ -1,9 +1,0 @@
-# Reconstruct pixel tracks and vertices from Digis
-include "HLTrigger/btau/data/jetTag/pixelReco.cff"
-
-# Reconstruct tracks with pixel seeds
-include "HLTrigger/btau/data/jetTag/lifetimeRegionalTracking.cff"
-
-# Reconstruct muons for JPsiToMumu
-include "HLTrigger/btau/data/displacedmumu/L3ForDisplacedMumuTrigger.cff" 
-#include "HLTrigger/btau/data/displacedmumu/L3ForDisplacedMumuLoosesTrigger.cff" 
