@@ -3,9 +3,9 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process("ANALYSIS")
 
 # Keep output to a nice level
-process.Timing =  cms.Service("Timing")
+#process.Timing =  cms.Service("Timing")
 process.load("FWCore/MessageService/MessageLogger_cfi")
-process.MessageLogger.destinations = cms.untracked.vstring("detailedInfo.txt")
+#process.MessageLogger.destinations = cms.untracked.vstring("detailedInfo.txt")
 process.options = cms.untracked.PSet(
     wantSummary = cms.untracked.bool(True)
 )
