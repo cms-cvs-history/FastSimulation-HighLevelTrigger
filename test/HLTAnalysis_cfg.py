@@ -5,7 +5,7 @@ process = cms.Process("ANALYSIS")
 # Keep output to a nice level
 #process.Timing =  cms.Service("Timing")
 process.load("FWCore/MessageService/MessageLogger_cfi")
-#process.MessageLogger.destinations = cms.untracked.vstring("detailedInfo.txt")
+process.MessageLogger.destinations = cms.untracked.vstring("detailedInfo.txt")
 process.options = cms.untracked.PSet(
     wantSummary = cms.untracked.bool(True)
 )
@@ -43,6 +43,7 @@ process.load("PhysicsTools.HepMCCandAlgos.genEventScale_cfi")
 process.load("FastSimulation.Configuration.RandomServiceInitialization_cff")
 # L1 Menu and prescale factors : useful for testing all L1 paths
 process.load("Configuration.StandardSequences.L1TriggerDefaultMenu_cff")
+
 # Common inputs, with frontier conditions
 process.load("FastSimulation.Configuration.CommonInputs_cff")
 process.GlobalTag.globaltag = "STARTUP_V5::All"
