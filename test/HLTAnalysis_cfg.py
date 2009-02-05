@@ -52,14 +52,21 @@ process.load("FastSimulation.HighLevelTrigger.HLTSetup_cff")
 # Famos sequences
 process.load("FastSimulation.Configuration.FamosSequences_cff")
 # Apply ECAL and HCAL miscalibration 
-process.caloRecHits.RecHitsFactory.doMiscalib = True
+process.ecalRecHit.doMiscalib = True
+process.hbhereco.doMiscalib = True
+process.horeco.doMiscalib = True
+process.hfreco.doMiscalib = True
 # Apply Tracker misalignment
 process.famosSimHits.ApplyAlignment = True
 process.misalignedTrackerGeometry.applyAlignment = True
 # Apply HCAL miscalibration (not ideal in that case).
 # Choose between hcalmiscalib_startup.xml , hcalmiscalib_1pb.xml , hcalmiscalib_10pb.xml (startup is the default)
-process.caloRecHits.RecHitsFactory.HCAL.Refactor = 1.0
-process.caloRecHits.RecHitsFactory.HCAL.Refactor_mean = 1.0
+process.hbhereco.RecHitsFactory.HCAL.Refactor = 1.0
+process.hbhereco.RecHitsFactory.HCAL.Refactor_mean = 1.0
+process.horeco.RecHitsFactory.HCAL.Refactor = 1.0
+process.horeco.RecHitsFactory.HCAL.Refactor_mean = 1.0
+process.hfreco.RecHitsFactory.HCAL.Refactor = 1.0
+process.hfreco.RecHitsFactory.HCAL.Refactor_mean = 1.0
 # Parametrized magnetic field (new mapping, 4.0 and 3.8T)
 process.load("Configuration.StandardSequences.MagneticField_38T_cff")
 process.VolumeBasedMagneticFieldESProducer.useParametrizedTrackerField = True
