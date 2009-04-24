@@ -41,12 +41,14 @@ process.load("PhysicsTools.HepMCCandAlgos.genEventScale_cfi")
 # FastSimulation Step
 # Include the RandomNumberGeneratorService definition
 process.load("FastSimulation.Configuration.RandomServiceInitialization_cff")
+
 # L1 Menu and prescale factors : useful for testing all L1 paths
-process.load("Configuration.StandardSequences.L1TriggerDefaultMenu_cff")
+# Note: the L1 conditions and menu now come from the GlobalTag !
+### process.load("Configuration.StandardSequences.L1TriggerDefaultMenu_cff")
 
 # Common inputs, with frontier conditions
 process.load("FastSimulation.Configuration.CommonInputs_cff")
-process.GlobalTag.globaltag = "STARTUP_V5::All"
+process.GlobalTag.globaltag = "STARTUP_31X::All"
 # L1 Emulator and HLT Setup
 process.load("FastSimulation.HighLevelTrigger.HLTSetup_cff")
 # Famos sequences
