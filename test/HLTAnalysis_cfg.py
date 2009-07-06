@@ -74,7 +74,8 @@ process.load("Configuration.StandardSequences.MagneticField_38T_cff")
 process.VolumeBasedMagneticFieldESProducer.useParametrizedTrackerField = True
 # HLT paths - defined by configDB
 # This one is created on the fly by FastSimulation/Configuration/test/IntegrationTestWithHLT_py.csh
-process.load("FastSimulation.Configuration.HLT_cff")
+#process.load("FastSimulation.Configuration.HLT_cff")
+process.load("HLTrigger.Configuration.HLT_FULL_cff")
 # Simulation sequence (with 0 pileup event prem bunch crossing)
 process.simulation = cms.Sequence(process.simulationWithFamos+process.genEventScale+process.genEventWeight)
 process.famosPileUp.PileUpSimulator.averageNumber = 0.0
@@ -121,10 +122,10 @@ process.analyzeThis = cms.EndPath( process.hltanalysis )
 process.schedule.append(process.DoHltMuon) 
 process.schedule.append(process.DoHLTJets)
 process.schedule.append(process.DoHLTPhoton)
-process.schedule.append(process.DoHLTElectron)
+#process.schedule.append(process.DoHLTElectron)
 process.schedule.append(process.DoHLTElectronStartUpWindows)
 process.schedule.append(process.DoHLTElectronLargeWindows)
-process.schedule.append(process.DoHLTTau)
-process.schedule.append(process.DoHLTBTag)
+#process.schedule.append(process.DoHLTTau)
+#process.schedule.append(process.DoHLTBTag)
 process.schedule.append(process.analyzeThis)
 ###############################################################################
